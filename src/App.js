@@ -226,6 +226,10 @@ class App extends Component {
                                 });
                         });
 
+
+
+
+
                     
 
                             
@@ -254,6 +258,35 @@ class App extends Component {
                             }
                             });
                     });
+
+
+
+                    map.loadImage("/marker.png", function(error, image) {
+                        if (error) throw error;
+                        map.addImage("bunkering-marker", image);
+
+                    map.addSource('bunkering', {
+                        type: 'geojson',
+                        data: 'data/bunkering.geojson'
+                      });
+                      
+                    
+                        map.addLayer({ 
+                            id: "bunkering",
+                            type: "symbol",
+                            source:'bunkering',
+                            "transition": {
+                                "duration": 300,
+                                "delay": 0
+                              },
+                                layout: {
+                                    "icon-image": "bunkering-marker",
+                                    'visibility': 'none',
+                                }
+                                });
+                        });
+
+
 
 
 

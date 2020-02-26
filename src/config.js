@@ -89,7 +89,7 @@ var config = {
         {
             id: 'pipelines', 
             title: 'Pipelines',
-            description: 'Copy these sections to add to your story.',
+            // description: 'Copy these sections to add to your story.',
             location: {
                 center: [6, 5.7],
                 zoom: 8.8,
@@ -106,7 +106,7 @@ var config = {
         {
             id: 'road-express', 
             title: 'Road Expressway',
-            description: 'Copy these sections to add to your story.',
+            // description: 'Copy these sections to add to your story.',
             location: {
                 center: [6, 5.7],
                 zoom: 8.5,
@@ -123,7 +123,24 @@ var config = {
         {
             id: 'settlement', 
             title: 'Settlements',
-            description: 'Copy these sections to add to your story.',
+            // description: 'Copy these sections to add to your story.',
+            location: {
+                center: [6, 5.7],
+                zoom: 8.5,
+                pitch: 0,
+                bearing: 0
+            },
+            onChapterEnter: [
+            
+            ],
+            onChapterExit: [],
+          
+        },
+
+        {
+            id: 'bunkering', 
+            title: 'Bunkering',
+            // description: 'Copy these sections to add to your story.',
             location: {
                 center: [6, 5.7],
                 zoom: 8.5,
@@ -136,6 +153,7 @@ var config = {
             onChapterExit: [],
           
         }
+
 
 
 
