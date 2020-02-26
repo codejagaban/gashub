@@ -4,6 +4,7 @@
 body {
   margin:0; 
   padding:0; 
+  font-size: 15px;
   font-family:'Lato', sans-serif;
 }
 a, a:hover, a:visited {
@@ -70,7 +71,7 @@ a, a:hover, a:visited {
 .step div {
   padding:  25px 50px;
   line-height: 25px;
-  font-size: 13px;
+  font-size: 16px;
 }
 .mapboxgl-popup {
   max-width: 400px;

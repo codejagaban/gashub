@@ -32,24 +32,15 @@ var config = {
                 //     opacity: 0
                 // }
             ],
-            legend: {
-                title: 'Tis the first',
-                desccription: 'Nallllldsf',
-                data: [
-                    1,
-                    2,
-                    3,
-                    4
-                ]
-            }
+          
         },
         {
             id: 'reserve',
             title: 'Natural Gas Reserve ',
-            image: './',
-            description: 'Copy these sections to add to your story.',
+            // image: './',
+            description: ' According to Nigerian National Petroleum Corporation (NNPC), Nigeria has around 202 trillion cubic feet (Tcf) of proven gas reserves plus about 600 TCF unproven gas reserves. There is no data for the number of gas reserves in Delta state, so we aggregated the total number of flared gas, spread across 15 LGA\'s in Delta, totaling 528 million cube feet (Mcf). We have about 42 onshore locations where gas are been flared in Delta State.',
             location: {
-                center: [6.5, 5.6],
+                center: [6, 5.6],
                 zoom: 8.4,
                 pitch: 0,
                 bearing: 0
@@ -66,27 +57,43 @@ var config = {
                 //     opacity: 0
                 // }
             ],
-            legend: {
-                title: 'Tis the first',
-                desccription: 'Nallllldsf',
-                data: [
-                    1,
-                    2,
-                    3,
-                    4
-                ]
-            }
+          
+        },
+        {
+            id: 'water',
+            title: 'Major Rivers ',
+            // image: './path/to/image/source.png',
+            description: 'Copy these sections to add to your story.',
+            location: {
+                center: [6, 5.7],
+                zoom: 8.5,
+                pitch: 20,
+                bearing: 0
+            },
+            onChapterEnter: [
+                // {
+                //     layer: 'bunkering',
+                //     opacity: 1
+                // }
+            ],
+            onChapterExit: [
+                // {
+                //     layer: 'bunkering',
+                //     opacity: 0
+                // }
+            ],
+          
         },
 
         {
             id: 'seaports',
             title: 'Available Seaports ',
-            image: './path/to/image/source.png',
-            description: 'Copy these sections to add to your story.',
+            // image: './path/to/image/source.png',
+            description: `Delta state has three (3) seaports spread across three (3) local governments area in Delta state. Namely <li>Burutu ( with a depth of 21 - 25 feet, 6.4m - 7.6 m)</li> <li>Sapele ( with a depth of 16 - 20 feet, 4.9m - 6.1 m) </li> <li>Warri ( with a depth of 21 - 25, feet 6.4m - 7.6 m).</li>`,
             location: {
-                center: [5.4, 5.7],
+                center: [6, 5.7],
                 zoom: 8.5,
-                pitch: 20,
+                pitch: 40,
                 bearing: 0
             },
             onChapterEnter: [
@@ -101,28 +108,20 @@ var config = {
                 //     opacity: 0
                 // }
             ],
-            legend: {
-                title: 'Tis the first',
-                desccription: 'Nallllldsf',
-                data: [
-                    1,
-                    2,
-                    3,
-                    4
-                ]
-            }
+          
         },
 
+       
         {
-            id: 'water',
-            title: 'Main Water ways ',
+            id: 'gas-existing', 
+            title: 'Existing Gas Plants',
             image: './path/to/image/source.png',
             description: 'Copy these sections to add to your story.',
             location: {
-                center: [5.4, 5.7],
-                zoom: 8.5,
-                pitch: 20,
-                bearing: 0
+                center: [6, 5.7],
+                zoom: 8.8,
+                pitch: 30,
+                bearing: -30
             },
             onChapterEnter: [
                 // {
@@ -136,16 +135,7 @@ var config = {
                 //     opacity: 0
                 // }
             ],
-            legend: {
-                title: 'Tis the first',
-                desccription: 'Nallllldsf',
-                data: [
-                    1,
-                    2,
-                    3,
-                    4
-                ]
-            }
+          
         }
 
 

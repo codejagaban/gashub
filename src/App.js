@@ -97,18 +97,46 @@ class App extends Component {
                         id: "reserve",
                         type: "symbol",
                         source:'reserve',
+                        "transition": {
+                            "duration": 300,
+                            "delay": 0
+                          },
                             layout: {
                                 "icon-image": "custom-marker",
                                 'icon-allow-overlap': true,
                                 'visibility': 'none',
                             }
                             });
+
+
+                            map.addLayer({ 
+                                id: "waters",
+                                type: "fill",
+                                source:'waters',
+                                
+                                    layout: {
+                                      
+                                        'visibility': 'none',
+                                    }
+                                    });
+
                     });
 
 
+                    map.addLayer({ 
+                        id: "water",
+                        type: "line",
+                        source:'water',
+                        
+                            layout: {
+                                'visibility': 'none',
+                            }
+                            });
+                
+
                         // 3. Sea ports
 
-                map.loadImage("/reserve.png", function(error, image) {
+                map.loadImage("/ship.png", function(error, image) {
                     if (error) throw error;
                     map.addImage("seaport-marker", image);
                     map.addSource('seaports', {
@@ -120,6 +148,10 @@ class App extends Component {
                         id: "seaports",
                         type: "symbol",
                         source:'seaports',
+                        "transition": {
+                            "duration": 300,
+                            "delay": 0
+                          },
                             layout: {
                                 "icon-image": "seaport-marker",
                                 'visibility': 'none',
@@ -136,18 +168,45 @@ class App extends Component {
 
                       map.addLayer({ 
                         id: "waters",
-                        type: "line",
+                        type: "fill",
                         source:'waters',
                             layout: {
                                 'visibility': 'none',
                             },
                             paint: {
-                                'line-color': 'red',
-                                'line-width': 3,
-                                'line-opacity': 1,
+                                'fill-color': '#000000',
+                                'fill-outline-color' :'#853408'
                               },
                             });
                 
+
+                            
+                            // Existing Gas Plants
+
+
+                map.loadImage("/marker.png", function(error, image) {
+                    if (error) throw error;
+                    map.addImage("gas-marker", image);
+                    map.addSource('gas-existing', {
+                        type: 'geojson',
+                        data: 'data/existingGasPlant.geojson'
+                      });
+                
+                    map.addLayer({ 
+                        id: "gas-existing",
+                        type: "symbol",
+                        source:'gas-existing',
+                        "transition": {
+                            "duration": 300,
+                            "delay": 0
+                          },
+                            layout: {
+                                "icon-image": "gas-marker",
+                                'visibility': 'none',
+                            }
+                            });
+                    });
+
 
 
                            
@@ -205,7 +264,7 @@ class App extends Component {
             var coordinates = e.features[0].geometry.coordinates.slice();
             var description =  `<h6> Location : ${e.features[0].properties.FIELD_NAME}</h6>
             <p>Amount  of gas flared: ${e.features[0].properties.GAS_VOLUME.toLocaleString()} MCFN</p>
-            <p>Number of times Gas was Flared :<i> ${e.features[0].properties.TIMES_FLARED} </i></p>`;
+            <p>Number of times gas was Flared :<i> ${e.features[0].properties.TIMES_FLARED} </i></p>`;
             // Ensure that if the map is zoomed out such that multiple
             // copies of the feature are visible, the popup appears
             // over the copy being pointed to.
@@ -256,6 +315,34 @@ class App extends Component {
 
 
 
+                //Existing gas plants
+                map.on('mouseenter', 'gas-existing', function(e) {
+                    // Change the cursor style as a UI indicator.
+                    map.getCanvas().style.cursor = 'pointer';
+                     
+                    var coordinates = e.features[0].geometry.coordinates.slice();
+                    var description =  `<h6> Location : ${e.features[0].properties.NAME}</h6>`;
+                    // Ensure that if the map is zoomed out such that multiple
+                    // copies of the feature are visible, the popup appears
+                    // over the copy being pointed to.
+                    while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+                    coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+                    }
+                     
+                    // Populate the popup and set its coordinates
+                    // based on the feature found.
+                    popup
+                    .setLngLat(coordinates)
+                    .setHTML(description)
+                    .addTo(map);
+                    });
+                     
+                    map.on('mouseleave', 'gas-existing', function() {
+                    map.getCanvas().style.cursor = '';
+                    popup.remove();
+                    });
+
+                
 
 
 
@@ -311,7 +398,7 @@ class App extends Component {
                                 <h2>{config.subtitle}</h2>
                             }
                             {config.byline &&
-                                <p>{config.byline}</p>
+                               <div dangerouslySetInnerHTML={{__html: config.byline}}></div>
                             }
                         </div>
                     }
