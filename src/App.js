@@ -109,29 +109,7 @@ class App extends Component {
                             });
 
 
-                            map.addLayer({ 
-                                id: "waters",
-                                type: "fill",
-                                source:'waters',
-                                
-                                    layout: {
-                                      
-                                        'visibility': 'none',
-                                    }
-                                    });
-
-                    });
-
-
-                    map.addLayer({ 
-                        id: "water",
-                        type: "line",
-                        source:'water',
-                        
-                            layout: {
-                                'visibility': 'none',
-                            }
-                            });
+                          
                 
 
                         // 3. Sea ports
@@ -166,19 +144,37 @@ class App extends Component {
                         data: 'data/waters.geojson'
                       });
 
-                      map.addLayer({ 
-                        id: "waters",
-                        type: "fill",
-                        source:'waters',
-                            layout: {
-                                'visibility': 'none',
-                            },
-                            paint: {
-                                'fill-color': '#000000',
-                                'fill-outline-color' :'#853408'
-                              },
-                            });
-                
+                      map.addLayer({
+                        "id": "waters",
+                        "type": "fill",
+                        "source": "waters",
+                        "layout": {'visibility': 'none'},
+                        "paint": {
+                            "fill-color": "#2244bf",
+                            "fill-opacity": 1,
+                        }
+                    });
+
+                      map.addSource('pipelines', {
+                        type: 'geojson',
+                        data: 'data/pipeline.geojson'
+                      });
+                      map.addLayer({
+                        "id": "pipelines",
+                        "type": "line",
+                        "source": "pipelines",
+                        "layout": {'visibility' : 'none'},
+                        "paint": {
+                            "line-color": "#9716ce",
+                            "line-opacity": 1,
+                            "line-width": 4
+                        }
+                    });
+                    
+
+                    
+
+                    
 
                             
                             // Existing Gas Plants
@@ -354,7 +350,9 @@ class App extends Component {
                 // })
      
 
-        }
+        })
+
+    }
 
     
 
@@ -457,7 +455,8 @@ function Chapter({id, theme, title, image, description, currentChapterID}) {
                     <img src={image} alt={title}></img>
                 }
                 { description &&
-                    <p>{description}</p>
+                 <section dangerouslySetInnerHTML={{__html: description}}></section>
+              
                 }
             </div>
         </div>

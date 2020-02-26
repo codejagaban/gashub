@@ -46,41 +46,10 @@ var config = {
                 bearing: 0
             },
             onChapterEnter: [
-                // {
-                //     layer: 'bunkering',
-                //     opacity: 1
-                // }
+            
             ],
             onChapterExit: [
-                // {
-                //     layer: 'bunkering',
-                //     opacity: 0
-                // }
-            ],
-          
-        },
-        {
-            id: 'water',
-            title: 'Major Rivers ',
-            // image: './path/to/image/source.png',
-            description: 'Copy these sections to add to your story.',
-            location: {
-                center: [6, 5.7],
-                zoom: 8.5,
-                pitch: 20,
-                bearing: 0
-            },
-            onChapterEnter: [
-                // {
-                //     layer: 'bunkering',
-                //     opacity: 1
-                // }
-            ],
-            onChapterExit: [
-                // {
-                //     layer: 'bunkering',
-                //     opacity: 0
-                // }
+         
             ],
           
         },
@@ -97,16 +66,30 @@ var config = {
                 bearing: 0
             },
             onChapterEnter: [
-                // {
-                //     layer: 'bunkering',
-                //     opacity: 1
-                // }
+            
             ],
             onChapterExit: [
-                // {
-                //     layer: 'bunkering',
-                //     opacity: 0
-                // }
+         
+            ],
+          
+        },
+
+        {
+            id: 'waters',
+            title: 'Major Rivers ',
+            // image: './path/to/image/source.png',
+            description: 'Copy these sections to add to your story.',
+            location: {
+                center: [6, 5.7],
+                zoom: 8.5,
+                pitch: 20,
+                bearing: 0
+            },
+            onChapterEnter: [
+            
+            ],
+            onChapterExit: [
+         
             ],
           
         },
@@ -124,17 +107,25 @@ var config = {
                 bearing: -30
             },
             onChapterEnter: [
-                // {
-                //     layer: 'bunkering',
-                //     opacity: 1
-                // }
+            
             ],
-            onChapterExit: [
-                // {
-                //     layer: 'bunkering',
-                //     opacity: 0
-                // }
+            onChapterExit: [],
+          
+        },
+        {
+            id: 'pipelines', 
+            title: 'Pipelines',
+            description: 'Copy these sections to add to your story.',
+            location: {
+                center: [6, 5.7],
+                zoom: 8.8,
+                pitch: 0,
+                bearing: 0
+            },
+            onChapterEnter: [
+            
             ],
+            onChapterExit: [],
           
         }
 
