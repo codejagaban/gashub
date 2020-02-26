@@ -170,6 +170,23 @@ class App extends Component {
                             "line-width": 4
                         }
                     });
+
+                    map.addSource('road-express', {
+                        type: 'geojson',
+                        data: 'data/roads.geojson'
+                      });
+                      map.addLayer({
+                        "id": "road-express",
+                        "type": "line",
+                        "source": "road-express",
+                        "layout": {'visibility' : 'none'},
+                        "paint": {
+                            "line-color": "#1116ce",
+                            "line-opacity": 1,
+                            "line-width": 4
+                        }
+                    });
+                    
                     
 
                     
