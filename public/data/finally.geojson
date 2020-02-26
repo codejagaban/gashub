@@ -1,0 +1,271 @@
+
+{
+    "type": "FeatureCollection",
+    "name": "gas_reserve",
+    "features": [
+      {
+        "type": "Feature",
+        "properties": {
+          "OBJECTID": 1,
+          "SIGHT_ID": 1,
+          "SIGHT_DATE": "26-02-2020",
+          "FIELD_NAME": "Sapele",
+          "GAS_VOLUME": 59565265.98,
+          "TIMES_FLARED": 93,
+          "SITE_DESC": "",
+          "NUM_OBJS": 0,
+          "SUS_ACT": "gas_reservation",
+          "LONG_DEC": 5.6842,
+          "LAT_DEC":  5.8907
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            
+            5.6842,
+             5.8907          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "OBJECTID": 2,
+          "SIGHT_ID": 2,
+          "SIGHT_DATE": "26-02-2020",
+          "FIELD_NAME": "Warri South",
+          "GAS_VOLUME": 8262866.675,
+          "TIMES_FLARED": 34,
+          "SITE_DESC": "",
+          "NUM_OBJS": 0,
+          "SUS_ACT": "gas_reservation",
+          "LONG_DEC": 5.6609,
+          "LAT_DEC": 5.6037
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            
+            
+          5.6037,
+            5.6609
+               ]
+        }
+      },
+
+      {
+        "type": "Feature",
+        "properties": {
+          "OBJECTID": 3,
+          "SIGHT_ID": 3,
+          "SIGHT_DATE": "26-02-2020",
+          "FIELD_NAME": "Warri North",
+          "GAS_VOLUME": 44429394.2,
+          "TIMES_FLARED": 87,
+          "SITE_DESC": "",
+          "NUM_OBJS": 0,
+          "SUS_ACT": "gas_reservation",
+          "LONG_DEC": 5.1432,
+          "LAT_DEC": 5.9593
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            5.1432,
+            5.9593
+           
+          ]
+        }
+      },
+
+      {
+        "type": "Feature",
+        "properties": {
+          "OBJECTID": 4,
+          "SIGHT_ID": 4,
+          "SIGHT_DATE": "26-02-2020",
+          "FIELD_NAME": "Ndokwa East",
+          "SITE_DESC": "",
+          "GAS_VOLUME": 98430719.01  ,
+          "TIMES_FLARED": 94,
+          "NUM_OBJS": 0,
+          "SUS_ACT": "gas_reservation",
+          "LONG_DEC": 6.5356,
+          "LAT_DEC": 5.6511
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            
+            6.5356,
+            5.6511
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "OBJECTID": 5,
+          "SIGHT_ID": 5,
+          "SIGHT_DATE": "26-02-2020",
+          "FIELD_NAME": "Ndokwa West",
+          "GAS_VOLUME": 70181277.33  ,
+          "TIMES_FLARED": 93,
+          "SITE_DESC": "",
+          "NUM_OBJS": 0,
+          "SUS_ACT": "gas_reservation",
+          "LONG_DEC": 6.3652,
+          "LAT_DEC": 5.6511
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            
+            6.3652,
+            5.7368
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "OBJECTID": 6,
+          "SIGHT_ID": 6,
+          "SIGHT_DATE": "26-02-2020",
+          "FIELD_NAME": "Udu",
+          "GAS_VOLUME": 1427814.533  ,
+          "TIMES_FLARED": 7,
+          "SITE_DESC": "",
+          "NUM_OBJS": 0,
+          "SUS_ACT": "gas_reservation",
+          "LONG_DEC": 5.4704,
+          "LAT_DEC": 5.8354
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            5.8354,
+            5.4704
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "OBJECTID": 7,
+          "SIGHT_ID": 7,
+          "SIGHT_DATE": "26-02-2020",
+          "FIELD_NAME": "Ughelli North",
+          "GAS_VOLUME": 22532457.07 ,
+          "TIMES_FLARED": 94,
+          "SITE_DESC": "",
+          "NUM_OBJS": 0,
+          "SUS_ACT": "gas_reservation",
+          "LONG_DEC": 6.1103,
+          "LAT_DEC": 5.6558
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            6.1103,
+            5.6558
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "OBJECTID": 8,
+          "SIGHT_ID": 8,
+          "SIGHT_DATE": "26-02-2020",
+          "FIELD_NAME": "Ughelli South",
+          "GAS_VOLUME": 31121637.99 ,
+          "TIMES_FLARED": 92,
+          "SITE_DESC": "",
+          "NUM_OBJS": 0,
+          "SUS_ACT": "gas_reservation",
+          "LONG_DEC": 5.9410,
+          "LAT_DEC": 5.2403
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            5.9410,
+            5.2403
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "OBJECTID": 9,
+          "SIGHT_ID": 9,
+          "SIGHT_DATE": "26-02-2020",
+          "FIELD_NAME": "Warri South West",
+          "GAS_VOLUME": 119622135.7,
+          "TIMES_FLARED": 94,
+          "SITE_DESC": "",
+          "NUM_OBJS": 0,
+          "SUS_ACT": "gas_reservation",
+          "LONG_DEC": 5.4359,
+          "LAT_DEC": 5.5787
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            5.4359,
+            5.5787
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "OBJECTID": 10,
+          "SIGHT_ID": 10,
+          "SIGHT_DATE": "26-02-2020",
+          "FIELD_NAME": "Uvwie",
+          "GAS_VOLUME": 98430719.01  ,
+          "TIMES_FLARED": 94,
+          "SITE_DESC": "",
+          "NUM_OBJS": 0,
+          "SUS_ACT": "gas_reservation",
+          "LONG_DEC": 5.7827,
+          "LAT_DEC": 5.5650
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            5.7827,
+            5.5650
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "OBJECTID": 11,
+          "SIGHT_ID": 11,
+          "SIGHT_DATE": "26-02-2020",
+          "FIELD_NAME": "Burutu",
+          "GAS_VOLUME": 98430719.01,
+          "SUITABILITY": 8,
+          "TIMES_FLARED": 94,
+          "SITE_DESC": "",
+          "NUM_OBJS": 0,
+          "SUS_ACT": "gas_reservation",
+          "LONG_DEC": 5.5066,
+          "LAT_DEC": 5.3510
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            5.5066,
+            5.3510
+          ]
+        }
+      },
+   
+  
+
+    ]
+}
