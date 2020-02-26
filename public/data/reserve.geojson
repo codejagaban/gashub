@@ -1,0 +1,328 @@
+
+{
+    "type": "FeatureCollection",
+    "name": "gas_reserve",
+    "features": [
+      {
+        "type": "Feature",
+        "properties": {
+          "OBJECTID": 1,
+          "SIGHT_ID": 1,
+          "SIGHT_DATE": "26-02-2020",
+          "FIELD_NAME": "Sapele",
+          "SITE_DESC": "",
+          "NUM_OBJS": 0,
+          "SUS_ACT": "gas_reservation",
+          "LONG_DEC": 5.684224,
+          "LAT_DEC": 5.890720
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            
+            5.684224,
+            5.890720          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "OBJECTID": 2,
+          "SIGHT_ID": 2,
+          "SIGHT_DATE": "26-02-2020",
+          "FIELD_NAME": "Warri South",
+          "SITE_DESC": "",
+          "NUM_OBJS": 0,
+          "SUS_ACT": "gas_reservation",
+          "LONG_DEC": 5.6609,
+          "LAT_DEC": 5.6037
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            
+            5.6609,
+            5.6037          ]
+        }
+      },
+
+      {
+        "type": "Feature",
+        "properties": {
+          "OBJECTID": 3,
+          "SIGHT_ID": 3,
+          "SIGHT_DATE": "26-02-2020",
+          "FIELD_NAME": "Warri North",
+          "SITE_DESC": "",
+          "NUM_OBJS": 0,
+          "SUS_ACT": "gas_reservation",
+          "LONG_DEC": 5.9593,
+          "LAT_DEC": 5.1432
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            5.9593,
+            5.1432
+           
+          ]
+        }
+      },
+
+      {
+        "type": "Feature",
+        "properties": {
+          "OBJECTID": 4,
+          "SIGHT_ID": 4,
+          "SIGHT_DATE": "26-02-2020",
+          "FIELD_NAME": "Ndokwa East",
+          "SITE_DESC": "",
+          "NUM_OBJS": 0,
+          "SUS_ACT": "gas_reservation",
+          "LONG_DEC": 6.5356,
+          "LAT_DEC": 5.6511
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            
+            6.5356,
+            5.6511
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "OBJECTID": 5,
+          "SIGHT_ID": 5,
+          "SIGHT_DATE": "26-02-2020",
+          "FIELD_NAME": "Ndokwa West",
+          "SITE_DESC": "",
+          "NUM_OBJS": 0,
+          "SUS_ACT": "gas_reservation",
+          "LONG_DEC": 6.3652,
+          "LAT_DEC": 5.6511
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            
+            6.3652,
+            5.7368
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "OBJECTID": 6,
+          "SIGHT_ID": 6,
+          "SIGHT_DATE": "26-02-2020",
+          "FIELD_NAME": "Udu",
+          "SITE_DESC": "",
+          "NUM_OBJS": 0,
+          "SUS_ACT": "gas_reservation",
+          "LONG_DEC": 5.4704,
+          "LAT_DEC": 5.8354
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            5.8354,
+            5.4704
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "OBJECTID": 7,
+          "SIGHT_ID": 7,
+          "SIGHT_DATE": "26-02-2020",
+          "FIELD_NAME": "Ughelli North",
+          "SITE_DESC": "",
+          "NUM_OBJS": 0,
+          "SUS_ACT": "gas_reservation",
+          "LONG_DEC": 6.1103,
+          "LAT_DEC": 5.6558
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            6.1103,
+            5.6558
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "OBJECTID": 8,
+          "SIGHT_ID": 8,
+          "SIGHT_DATE": "26-02-2020",
+          "FIELD_NAME": "Ughelli South",
+          "SITE_DESC": "",
+          "NUM_OBJS": 0,
+          "SUS_ACT": "gas_reservation",
+          "LONG_DEC": 5.9410,
+          "LAT_DEC": 5.2403
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            5.9410,
+            5.2403
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "OBJECTID": 9,
+          "SIGHT_ID": 9,
+          "SIGHT_DATE": "26-02-2020",
+          "FIELD_NAME": "Warri South West",
+          "SITE_DESC": "",
+          "NUM_OBJS": 0,
+          "SUS_ACT": "gas_reservation",
+          "LONG_DEC": 5.4359,
+          "LAT_DEC": 5.5787
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            5.4359,
+            5.5787
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "OBJECTID": 10,
+          "SIGHT_ID": 10,
+          "SIGHT_DATE": "26-02-2020",
+          "FIELD_NAME": "Uvwie",
+          "SITE_DESC": "",
+          "NUM_OBJS": 0,
+          "SUS_ACT": "gas_reservation",
+          "LONG_DEC": 5.7827,
+          "LAT_DEC": 5.5650
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            5.7827,
+            5.5650
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "OBJECTID": 11,
+          "SIGHT_ID": 11,
+          "SIGHT_DATE": "26-02-2020",
+          "FIELD_NAME": "Burutu",
+          "SITE_DESC": "",
+          "NUM_OBJS": 0,
+          "SUS_ACT": "gas_reservation",
+          "LONG_DEC": 5.5066,
+          "LAT_DEC": 5.3510
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            5.5066,
+            5.3510
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "OBJECTID": 12,
+          "SIGHT_ID": 12,
+          "SIGHT_DATE": "26-02-2020",
+          "FIELD_NAME": "Ika South ",
+          "SITE_DESC": "",
+          "NUM_OBJS": 0,
+          "SUS_ACT": "gas_reservation",
+          "LONG_DEC": 6.1739,
+          "LAT_DEC": 6.2651
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            6.1739,
+            6.2651
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "OBJECTID": 13,
+          "SIGHT_ID": 13,
+          "SIGHT_DATE": "26-02-2020",
+          "FIELD_NAME": "Isoko North ",
+          "SITE_DESC": "",
+          "NUM_OBJS": 0,
+          "SUS_ACT": "gas_reservation",
+          "LONG_DEC": 6.2164,
+          "LAT_DEC": 5.5919
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            6.2164,
+            5.5919
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "OBJECTID": 14,
+          "SIGHT_ID": 14,
+          "SIGHT_DATE": "26-02-2020",
+          "FIELD_NAME": "Isoko South ",
+          "SITE_DESC": "",
+          "NUM_OBJS": 0,
+          "SUS_ACT": "gas_reservation",
+          "LONG_DEC": 6.1951,
+          "LAT_DEC": 5.4043
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            6.1951,
+            5.4043
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "OBJECTID": 15,
+          "SIGHT_ID": 15,
+          "SIGHT_DATE": "26-02-2020",
+          "FIELD_NAME": "Ukwuani ",
+          "SITE_DESC": "",
+          "NUM_OBJS": 0,
+          "SUS_ACT": "gas_reservation",
+          "LONG_DEC": 6.1951,
+          "LAT_DEC": 5.8225
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            6.1951,
+            5.8225
+          ]
+        }
+      }
+
+    ]
+}

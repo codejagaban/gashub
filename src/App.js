@@ -1,101 +1,280 @@
-import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-
+import React, { Component, Fragment } from 'react';
 import './App.css';
-import { Container, Col, Row } from 'react-bootstrap';
-import MapBox from './components/MapBox';
+import mapboxgl from 'mapbox-gl';
+import scrollama from 'scrollama';
+import { Button, ButtonToolbar, Container, Row, Col, } from 'react-bootstrap';
+
+const layerTypes = {
 
 
-function App() {
-  return (
-    <div className="App">
-      <Container fluid>
-        <Row>
-        <Col md="4">
-          <div className="description">
-          <section className="active" id="intro">
-            <h1>First Page</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente vero consequuntur corporis autem enim necessitatibus illum dolor veniam voluptatum id voluptatibus, assumenda tenetur asperiores repudiandae, minima ut. Cumque, minima eum.</p>
 
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente vero consequuntur corporis autem enim necessitatibus illum dolor veniam voluptatum id voluptatibus, assumenda tenetur asperiores repudiandae, minima ut. Cumque, minima eum.</p>
+    'fill': ['fill-opacity'],
+    'line': ['line-opacity'],
+    'circle': ['circle-opacity', 'circle-stroke-opacity'],
+    'symbol': ['icon-opacity', 'text-opacity'],
+    'raster': ['raster-opacity'],
+    'fill-extrusion': ['fill-extrusion-opacity']
+}
 
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente vero consequuntur corporis autem enim necessitatibus illum dolor veniam voluptatum id voluptatibus, assumenda tenetur asperiores repudiandae, minima ut. Cumque, minima eum.</p>
+const alignments = {
+    'left': 'lefty',
+    'center': 'centered',
+    'right': 'righty'
+}
 
-
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente vero consequuntur corporis autem enim necessitatibus illum dolor veniam voluptatum id voluptatibus, assumenda tenetur asperiores repudiandae, minima ut. Cumque, minima eum.</p>
-
-            This is the First page and an Intro to the gasHub Platform
-           <div className="text-center ">
-           <a href="#2ndPage"><img src="assets/icons/arrow_down.svg" className="arrow_down" width="150"/></a>
-
-           </div>
-
-          </section>
+const transformRequest = (url) => {
+    const hasQuery = url.indexOf("?") !== -1;	  
+    const suffix = hasQuery ? "&pluginName=journalismScrollytelling" : "?pluginName=journalismScrollytelling";	  
+    return {
+      url: url + suffix
+    }	 
+}
 
 
-          <section className="" id="2ndPage">
-          <div className="text-center arrow_up">
-           <a href="#intro"><img src="assets/icons/arrow_up.svg" width="150"/></a>
+class App extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            currentChapter: props.chapters[0]
+        };
+        // this.setState = this.setState.bind(this);
+    }
 
-           </div>
+    componentDidMount() {
+        const config = this.props;
+        const mapStart = config.chapters[0].location;
 
-            <h1>Bunkering Activities In Sapele</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente vero consequuntur corporis autem enim necessitatibus illum dolor veniam voluptatum id voluptatibus, assumenda tenetur asperiores repudiandae, minima ut. Cumque, minima eum.</p>
-
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente vero consequuntur corporis autem enim necessitatibus illum dolor veniam voluptatum id voluptatibus, assumenda tenetur asperiores repudiandae, minima ut. Cumque, minima eum.</p>
-
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente vero consequuntur corporis autem enim necessitatibus illum dolor veniam voluptatum id voluptatibus, assumenda tenetur asperiores repudiandae, minima ut. Cumque, minima eum.</p>
-
-
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente vero consequuntur corporis autem enim necessitatibus illum dolor veniam voluptatum id voluptatibus, assumenda tenetur asperiores repudiandae, minima ut. Cumque, minima eum.</p>
-
-            This is the First page and an Intro to the gasHub Platform
-        
-            <div className="text-center arrow_down">
-           <a href="#3rdPage"><img src="assets/icons/arrow_down.svg" width="150"/></a>
-
-           </div>
-
-          </section>
-
-          <section className="" id="3rdPage">
-          <div className="text-center arrow_up">
-           <a href="#2ndPage"><img src="assets/icons/arrow_up.svg" width="150"/></a>
-
-           </div>
-
-
-            <h1>Third Page</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente vero consequuntur corporis autem enim necessitatibus illum dolor veniam voluptatum id voluptatibus, assumenda tenetur asperiores repudiandae, minima ut. Cumque, minima eum.</p>
-
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente vero consequuntur corporis autem enim necessitatibus illum dolor veniam voluptatum id voluptatibus, assumenda tenetur asperiores repudiandae, minima ut. Cumque, minima eum.</p>
-
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente vero consequuntur corporis autem enim necessitatibus illum dolor veniam voluptatum id voluptatibus, assumenda tenetur asperiores repudiandae, minima ut. Cumque, minima eum.</p>
-
-
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente vero consequuntur corporis autem enim necessitatibus illum dolor veniam voluptatum id voluptatibus, assumenda tenetur asperiores repudiandae, minima ut. Cumque, minima eum.</p>
-
-            This is the First page and an Intro to the gasHub Platform
-            <div className="text-center arrow_down ">
-           <a href="#intro"><img src="assets/icons/arrow_down.svg" width="150"/></a>
-
-           </div>
-
-
-          </section>
-
-
-          </div>
-      
-        </Col>
-        <Col md="8">
-          <MapBox/>
-        </Col>
-        </Row>
-      </Container>
+        mapboxgl.accessToken = config.accessToken;
     
+       
+        const map = new mapboxgl.Map({
+            container: this.mapContainer,
+            style: config.style,
+            center: mapStart.center,
+            zoom: mapStart.zoom,
+            pitch: mapStart.pitch,
+            bearing: mapStart.bearing,
+            transformRequest: transformRequest
+        });
+
+        // const marker = new mapboxgl.Marker();
+        // if (config.showMarkers) {
+        //     marker.setLngLat(mapStart.center).addTo(map);
+        // }
+
+        function getLayerPaintType(layer) {
+            var layerType = map.getLayer(layer).type;
+            return layerTypes[layerType];
+        }
+
+        function setLayerOpacity(layer) {
+            var paintProps = getLayerPaintType(layer.layer);
+            paintProps.forEach(function(prop) {
+                map.setPaintProperty(layer.layer, prop, layer.opacity);
+            });
+        }
+
+        const setState = this.setState.bind(this);
+
+        // instantiate the scrollama
+        const scroller = scrollama();
+
+
+        
+        map.on('load', function () {
+
+                // 2. reservechapterName
+
+                map.loadImage("/reserve.png", function(error, image) {
+                    if (error) throw error;
+                    map.addImage("custom-marker", image);
+                    map.addSource('reserve', {
+                        type: 'geojson',
+                        data: 'data/reserve.geojson'
+                      });
+                
+                    map.addLayer({ 
+                        id: "reserve",
+                        type: "symbol",
+                        source:'reserve',
+                            layout: {
+                                "icon-image": "custom-marker",
+                                'visibility': 'none',
+                            }
+                            });
+                    });
+                           
+
+
+            // setup the instance, pass callback functions
+            scroller
+            .setup({
+                step: '.step',
+                offset: 0.5,
+                progress: true
+
+            })
+            .onStepEnter(response => {
+                const chapter = config.chapters.find(chap => chap.id === response.element.id);
+                setState({currentChapter:chapter});
+                map.flyTo(chapter.location);
+                console.log(chapter)
+                // if (config.showMarkers) {
+                //     marker.setLngLat(chapter.location.center);
+                // }
+                map.setLayoutProperty(chapter.id, 'visibility', 'visible');
+                if (chapter.onChapterEnter.length > 0) {
+                    chapter.onChapterEnter.forEach(setLayerOpacity);
+                }
+            })
+            .onStepExit(response => {
+                var chapter = config.chapters.find(chap => chap.id === response.element.id);
+                map.setLayoutProperty(chapter.id, 'visibility', 'none');
+                if (chapter.onChapterExit.length > 0) {
+                    chapter.onChapterExit.forEach(setLayerOpacity);
+                }
+            });
+
+
+         
+        });
+
+          // Add zoom and rotation controls to the map.
+          map.addControl(new mapboxgl.NavigationControl(),'top-right');
+
+        window.addEventListener('resize', scroller.resize);
+
+         // Create a popup, but don't add it to the map yet.
+         const  popup = new mapboxgl.Popup({
+            closeButton: false,
+            closeOnClick: false
+            });
+        
+        
+            map.on('mouseenter', 'reserve', function(e) {
+                // Change the cursor style as a UI indicator.
+                map.getCanvas().style.cursor = 'pointer';
+                
+                 
+                var coordinates = e.features[0].geometry.coordinates.slice();
+                var description = e.features[0].properties.SITE_DESC;
+                 
+                // Ensure that if the map is zoomed out such that multiple
+                // copies of the feature are visible, the popup appears
+                // over the copy being pointed to.
+                while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+                coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+                }
+                 
+                // Populate the popup and set its coordinates
+                // based on the feature found.
+                popup
+                .setLngLat(coordinates)
+                .setHTML(description)
+                .addTo(map);
+                });
+                console.log(popup)
+                 
+                map.on('mouseleave', 'reserve', function() {
+                map.getCanvas().style.cursor = '';
+                popup.remove();
+                });
+        
+                
+
+        
+    }
+
+    
+
+    render() {
+        const config = this.props;
+        const theme =  config.theme;
+        const currentChapterID = this.state.currentChapter.id;
+        return (
+            <div>
+                <div ref={el => this.mapContainer = el} className="absolute top right left bottom" />
+                <div id="story">
+            <Container>
+                <Row>
+                  
+                    <Col md="8" className="mx-auto">
+                    <ButtonToolbar className="link">
+ 
+ <Button variant="outline-danger">Reserve</Button>
+ <Button variant="outline-info">Seaport</Button>
+ <Button variant="outline-light">Pipeline</Button>
+ <Button variant="outline-dark">Road</Button>
+ <Button variant="outline-dark">Vegetation</Button>
+ <Button variant="outline-dark">Conflicts</Button>
+ <Button variant="outline-dark">Existing Gas Plants</Button>
+ <Button variant="outline-dark">Road</Button>
+
+</ButtonToolbar>
+                    </Col>
+                </Row>
+           
+            </Container>
+                    {config.title &&
+                        <div id="header" className={theme}>
+                            <h1>{config.title}</h1>
+                            {config.subtitle &&
+                                <h2>{config.subtitle}</h2>
+                            }
+                            {config.byline &&
+                                <p>{config.byline}</p>
+                            }
+                        </div>
+                    }
+                   
+
+                    <div id="features" className={alignments[config.alignment]}>
+                        {
+                            config.chapters.map(chapter => 
+                                <Chapter key={chapter.id} theme={theme} {...chapter} currentChapterID={currentChapterID}/>
+                            )
+                        }
+                       
+                    </div>
+
+                  { config.legend &&  <div id="legend" className={theme} >
+        This is a Legend Box
     </div>
-  );
+                }
+                    {config.footer &&
+                        <div id="footer" className={theme}>
+                            <p>{config.footer}</p>
+                        </div>
+                    }
+
+             
+                </div>
+            </div>
+        );
+    }
+
+}
+
+function Chapter({id, theme, title, image, description, currentChapterID}) {
+    const classList = id === currentChapterID ? "step active" : "step";
+    return (
+        <Fragment>
+        <div id={id} className={classList}>
+            <div className={theme}>
+                { title &&
+                    <h3 className="title">{title}</h3>
+                }
+                { image &&
+                    <img src={image} alt={title}></img>
+                }
+                { description &&
+                    <p>{description}</p>
+                }
+            </div>
+        </div>
+        
+        </Fragment>
+    )
 }
 
 export default App;
