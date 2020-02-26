@@ -144,6 +144,23 @@ var config = {
             ],
             onChapterExit: [],
           
+        },
+
+        {
+            id: 'settlement', 
+            title: 'Settlements',
+            description: 'Copy these sections to add to your story.',
+            location: {
+                center: [6, 5.7],
+                zoom: 8.5,
+                pitch: 0,
+                bearing: 0
+            },
+            onChapterEnter: [
+            
+            ],
+            onChapterExit: [],
+          
         }
 
 

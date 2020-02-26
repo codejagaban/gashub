@@ -198,10 +198,33 @@ class App extends Component {
                             "line-width": 4
                         }
                     });
-                    
-                    
 
+
+
+                    map.loadImage("/house.png", function(error, image) {
+                        if (error) throw error;
+                        map.addImage("settlement-marker", image);
+
+                    map.addSource('settlement', {
+                        type: 'geojson',
+                        data: 'data/settlement.geojson'
+                      });
+                      
                     
+                        map.addLayer({ 
+                            id: "settlement",
+                            type: "symbol",
+                            source:'settlement',
+                            "transition": {
+                                "duration": 300,
+                                "delay": 0
+                              },
+                                layout: {
+                                    "icon-image": "settlement-marker",
+                                    'visibility': 'none',
+                                }
+                                });
+                        });
 
                     
 
