@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+
 body {
   margin:0; 
   padding:0; 
-  font-family: sans-serif;
+  font-family:'Lato', sans-serif;
 }
 a, a:hover, a:visited {
   color: #0071bc;
@@ -9,9 +12,9 @@ a, a:hover, a:visited {
 .mapboxgl-map {
   top:0; 
   height: 100vh;
-  width:100vw;
+  width:70%;
   position: fixed;
-  z-index: 100;
+  z-index: 5;
 }
 #header {
   margin: 3vh auto;
@@ -39,10 +42,10 @@ a, a:hover, a:visited {
   width: 50vw;
   margin: 0 auto;
 }
-.lefty {
+/* .lefty {
   width: 33vw;
   margin-left: 5vw;
-}
+} */
 .righty {
   width: 33vw;
   margin-left: 62vw;

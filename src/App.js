@@ -204,10 +204,8 @@ class App extends Component {
              
             var coordinates = e.features[0].geometry.coordinates.slice();
             var description =  `<h6> Location : ${e.features[0].properties.FIELD_NAME}</h6>
-            <p>Amount  of gas flared: ${e.features[0].properties.GAS_VOLUME.toLocaleString()}</p>
+            <p>Amount  of gas flared: ${e.features[0].properties.GAS_VOLUME.toLocaleString()} MCFN</p>
             <p>Number of times Gas was Flared :<i> ${e.features[0].properties.TIMES_FLARED} </i></p>`;
-            
-             
             // Ensure that if the map is zoomed out such that multiple
             // copies of the feature are visible, the popup appears
             // over the copy being pointed to.
@@ -229,12 +227,44 @@ class App extends Component {
             });
 
 
+                 
+                map.on('mouseenter', 'seaports', function(e) {
+                // Change the cursor style as a UI indicator.
+                map.getCanvas().style.cursor = 'pointer';
+                 
+                var coordinates = e.features[0].geometry.coordinates.slice();
+                var description =  `<h6> Location : ${e.features[0].properties.FIELD_NAME}</h6>`;
+                // Ensure that if the map is zoomed out such that multiple
+                // copies of the feature are visible, the popup appears
+                // over the copy being pointed to.
+                while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+                coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+                }
+                 
+                // Populate the popup and set its coordinates
+                // based on the feature found.
+                popup
+                .setLngLat(coordinates)
+                .setHTML(description)
+                .addTo(map);
+                });
+                 
+                map.on('mouseleave', 'seaports', function() {
+                map.getCanvas().style.cursor = '';
+                popup.remove();
+                });
 
 
-    
-        
-     
 
+
+
+
+                // map.on('style.load', () => {
+                //     map.rotateTo(180.0, {
+                //         duration: 20000
+                //     });
+                  
+                // })
      
 
         }
@@ -247,9 +277,13 @@ class App extends Component {
         const currentChapterID = this.state.currentChapter.id;
         return (
             <div>
-                <div ref={el => this.mapContainer = el} className="absolute top right left bottom" />
-                <div id="story">
-            <Container>
+
+                <Row>
+                    <Col md="4">
+
+
+                    <div id="story">
+            {/* <Container>
                 <Row>
                   
                     <Col md="8" className="mx-auto">
@@ -269,7 +303,7 @@ class App extends Component {
                     </Col>
                 </Row>
            
-            </Container>
+            </Container> */}
                     {config.title &&
                         <div id="header" className={theme}>
                             <h1>{config.title}</h1>
@@ -304,6 +338,19 @@ class App extends Component {
 
              
                 </div>
+
+
+                    </Col>
+
+
+                    <Col md="8">
+
+                <div ref={el => this.mapContainer = el} className="absolute top right left bottom" />
+                    </Col>
+                </Row>
+               
+
+               
             </div>
         );
     }

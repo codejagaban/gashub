@@ -14,10 +14,10 @@ var config = {
             image: './path/to/image/source.png',
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint oading lpa qui officia deserunt mollit anim id est laborum.',
             location: {
-                center: [5.4, 5.7],
-                zoom: 8.5,
-                pitch: 40,
-                bearing: -10,
+                center: [6, 5.6],
+                zoom: 8.4,
+                bearing: 0,
+                pitch: 0,
                
             },
             onChapterEnter: [
@@ -49,8 +49,8 @@ var config = {
             image: './',
             description: 'Copy these sections to add to your story.',
             location: {
-                center: [5.4, 5.7],
-                zoom: 8.5,
+                center: [6.5, 5.6],
+                zoom: 8.4,
                 pitch: 0,
                 bearing: 0
             },
