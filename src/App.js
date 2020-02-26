@@ -99,10 +99,57 @@ class App extends Component {
                         source:'reserve',
                             layout: {
                                 "icon-image": "custom-marker",
+                                'icon-allow-overlap': true,
                                 'visibility': 'none',
                             }
                             });
                     });
+
+
+                        // 3. Sea ports
+
+                map.loadImage("/reserve.png", function(error, image) {
+                    if (error) throw error;
+                    map.addImage("seaport-marker", image);
+                    map.addSource('seaports', {
+                        type: 'geojson',
+                        data: 'data/seaports.geojson'
+                      });
+                
+                    map.addLayer({ 
+                        id: "seaports",
+                        type: "symbol",
+                        source:'seaports',
+                            layout: {
+                                "icon-image": "seaport-marker",
+                                'visibility': 'none',
+                            }
+                            });
+                    });
+
+                    //  4. Water Ways   
+                    
+                    map.addSource('waters', {
+                        type: 'geojson',
+                        data: 'data/waters.geojson'
+                      });
+
+                      map.addLayer({ 
+                        id: "waters",
+                        type: "line",
+                        source:'waters',
+                            layout: {
+                                'visibility': 'none',
+                            },
+                            paint: {
+                                'line-color': 'red',
+                                'line-width': 3,
+                                'line-opacity': 1,
+                              },
+                            });
+                
+
+
                            
 
 
@@ -136,7 +183,8 @@ class App extends Component {
             });
 
 
-         
+                
+
         });
 
           // Add zoom and rotation controls to the map.
@@ -144,46 +192,52 @@ class App extends Component {
 
         window.addEventListener('resize', scroller.resize);
 
-         // Create a popup, but don't add it to the map yet.
-         const  popup = new mapboxgl.Popup({
+
+        var popup = new mapboxgl.Popup({
             closeButton: false,
             closeOnClick: false
             });
-        
-        
+             
             map.on('mouseenter', 'reserve', function(e) {
-                // Change the cursor style as a UI indicator.
-                map.getCanvas().style.cursor = 'pointer';
-                
-                 
-                var coordinates = e.features[0].geometry.coordinates.slice();
-                var description = e.features[0].properties.SITE_DESC;
-                 
-                // Ensure that if the map is zoomed out such that multiple
-                // copies of the feature are visible, the popup appears
-                // over the copy being pointed to.
-                while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
-                coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
-                }
-                 
-                // Populate the popup and set its coordinates
-                // based on the feature found.
-                popup
-                .setLngLat(coordinates)
-                .setHTML(description)
-                .addTo(map);
-                });
-                console.log(popup)
-                 
-                map.on('mouseleave', 'reserve', function() {
-                map.getCanvas().style.cursor = '';
-                popup.remove();
-                });
-        
-                
+            // Change the cursor style as a UI indicator.
+            map.getCanvas().style.cursor = 'pointer';
+             
+            var coordinates = e.features[0].geometry.coordinates.slice();
+            var description =  `<h6> Location : ${e.features[0].properties.FIELD_NAME}</h6>
+            <p>Amount  of gas flared: ${e.features[0].properties.GAS_VOLUME.toLocaleString()}</p>
+            <p>Number of times Gas was Flared :<i> ${e.features[0].properties.TIMES_FLARED} </i></p>`;
+            
+             
+            // Ensure that if the map is zoomed out such that multiple
+            // copies of the feature are visible, the popup appears
+            // over the copy being pointed to.
+            while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+            coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+            }
+             
+            // Populate the popup and set its coordinates
+            // based on the feature found.
+            popup
+            .setLngLat(coordinates)
+            .setHTML(description)
+            .addTo(map);
+            });
+             
+            map.on('mouseleave', 'reserve', function() {
+            map.getCanvas().style.cursor = '';
+            popup.remove();
+            });
 
+
+
+
+    
         
-    }
+     
+
+     
+
+        }
 
     
 
@@ -201,14 +255,15 @@ class App extends Component {
                     <Col md="8" className="mx-auto">
                     <ButtonToolbar className="link">
  
- <Button variant="outline-danger">Reserve</Button>
- <Button variant="outline-info">Seaport</Button>
- <Button variant="outline-light">Pipeline</Button>
- <Button variant="outline-dark">Road</Button>
- <Button variant="outline-dark">Vegetation</Button>
- <Button variant="outline-dark">Conflicts</Button>
- <Button variant="outline-dark">Existing Gas Plants</Button>
- <Button variant="outline-dark">Road</Button>
+ <Button  className="btn-summary">Reserve</Button>
+ <Button  className="btn-summary">Seaport</Button>
+ <Button  className="btn-summary">Road</Button>
+ <Button  className="btn-summary">Pipeline</Button>
+ <Button  className="btn-summary">Road</Button>
+ <Button  className="btn-summary">Vegetation</Button>
+ <Button  className="btn-summary">Conflicts</Button>
+ <Button  className="btn-summary">Existing Gas Plants</Button>
+ <Button  className="btn-summary">Road</Button>
 
 </ButtonToolbar>
                     </Col>

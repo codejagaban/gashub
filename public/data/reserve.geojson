@@ -10,18 +10,20 @@
           "SIGHT_ID": 1,
           "SIGHT_DATE": "26-02-2020",
           "FIELD_NAME": "Sapele",
+          "GAS_VOLUME": 59565265.98,
+          "TIMES_FLARED": 93,
           "SITE_DESC": "",
           "NUM_OBJS": 0,
           "SUS_ACT": "gas_reservation",
-          "LONG_DEC": 5.684224,
-          "LAT_DEC": 5.890720
+          "LONG_DEC": 5.6842,
+          "LAT_DEC":  5.8907
         },
         "geometry": {
           "type": "Point",
           "coordinates": [
             
-            5.684224,
-            5.890720          ]
+            5.6842,
+             5.8907          ]
         }
       },
       {
@@ -31,6 +33,8 @@
           "SIGHT_ID": 2,
           "SIGHT_DATE": "26-02-2020",
           "FIELD_NAME": "Warri South",
+          "GAS_VOLUME": 8262866.675,
+          "TIMES_FLARED": 34,
           "SITE_DESC": "",
           "NUM_OBJS": 0,
           "SUS_ACT": "gas_reservation",
@@ -41,8 +45,10 @@
           "type": "Point",
           "coordinates": [
             
-            5.6609,
-            5.6037          ]
+            
+          5.6037,
+            5.6609
+               ]
         }
       },
 
@@ -53,17 +59,19 @@
           "SIGHT_ID": 3,
           "SIGHT_DATE": "26-02-2020",
           "FIELD_NAME": "Warri North",
+          "GAS_VOLUME": 44429394.2,
+          "TIMES_FLARED": 87,
           "SITE_DESC": "",
           "NUM_OBJS": 0,
           "SUS_ACT": "gas_reservation",
-          "LONG_DEC": 5.9593,
-          "LAT_DEC": 5.1432
+          "LONG_DEC": 5.1432,
+          "LAT_DEC": 5.9593
         },
         "geometry": {
           "type": "Point",
           "coordinates": [
-            5.9593,
-            5.1432
+            5.1432,
+            5.9593
            
           ]
         }
@@ -77,6 +85,8 @@
           "SIGHT_DATE": "26-02-2020",
           "FIELD_NAME": "Ndokwa East",
           "SITE_DESC": "",
+          "GAS_VOLUME": 98430719.01  ,
+          "TIMES_FLARED": 94,
           "NUM_OBJS": 0,
           "SUS_ACT": "gas_reservation",
           "LONG_DEC": 6.5356,
@@ -98,6 +108,8 @@
           "SIGHT_ID": 5,
           "SIGHT_DATE": "26-02-2020",
           "FIELD_NAME": "Ndokwa West",
+          "GAS_VOLUME": 70181277.33  ,
+          "TIMES_FLARED": 93,
           "SITE_DESC": "",
           "NUM_OBJS": 0,
           "SUS_ACT": "gas_reservation",
@@ -120,6 +132,8 @@
           "SIGHT_ID": 6,
           "SIGHT_DATE": "26-02-2020",
           "FIELD_NAME": "Udu",
+          "GAS_VOLUME": 1427814.533  ,
+          "TIMES_FLARED": 7,
           "SITE_DESC": "",
           "NUM_OBJS": 0,
           "SUS_ACT": "gas_reservation",
@@ -141,6 +155,8 @@
           "SIGHT_ID": 7,
           "SIGHT_DATE": "26-02-2020",
           "FIELD_NAME": "Ughelli North",
+          "GAS_VOLUME": 22532457.07 ,
+          "TIMES_FLARED": 94,
           "SITE_DESC": "",
           "NUM_OBJS": 0,
           "SUS_ACT": "gas_reservation",
@@ -162,6 +178,8 @@
           "SIGHT_ID": 8,
           "SIGHT_DATE": "26-02-2020",
           "FIELD_NAME": "Ughelli South",
+          "GAS_VOLUME": 31121637.99 ,
+          "TIMES_FLARED": 92,
           "SITE_DESC": "",
           "NUM_OBJS": 0,
           "SUS_ACT": "gas_reservation",
@@ -183,6 +201,8 @@
           "SIGHT_ID": 9,
           "SIGHT_DATE": "26-02-2020",
           "FIELD_NAME": "Warri South West",
+          "GAS_VOLUME": 119622135.7,
+          "TIMES_FLARED": 94,
           "SITE_DESC": "",
           "NUM_OBJS": 0,
           "SUS_ACT": "gas_reservation",
@@ -204,6 +224,8 @@
           "SIGHT_ID": 10,
           "SIGHT_DATE": "26-02-2020",
           "FIELD_NAME": "Uvwie",
+          "GAS_VOLUME": 98430719.01  ,
+          "TIMES_FLARED": 94,
           "SITE_DESC": "",
           "NUM_OBJS": 0,
           "SUS_ACT": "gas_reservation",
@@ -225,6 +247,8 @@
           "SIGHT_ID": 11,
           "SIGHT_DATE": "26-02-2020",
           "FIELD_NAME": "Burutu",
+          "GAS_VOLUME": 98430719.01  ,
+          "TIMES_FLARED": 94,
           "SITE_DESC": "",
           "NUM_OBJS": 0,
           "SUS_ACT": "gas_reservation",
@@ -246,6 +270,8 @@
           "SIGHT_ID": 12,
           "SIGHT_DATE": "26-02-2020",
           "FIELD_NAME": "Ika South ",
+          "GAS_VOLUME": 98430719.01  ,
+          "TIMES_FLARED": 94,
           "SITE_DESC": "",
           "NUM_OBJS": 0,
           "SUS_ACT": "gas_reservation",
@@ -267,6 +293,8 @@
           "SIGHT_ID": 13,
           "SIGHT_DATE": "26-02-2020",
           "FIELD_NAME": "Isoko North ",
+          "GAS_VOLUME": 98430719.01  ,
+          "TIMES_FLARED": 94,
           "SITE_DESC": "",
           "NUM_OBJS": 0,
           "SUS_ACT": "gas_reservation",
@@ -288,6 +316,8 @@
           "SIGHT_ID": 14,
           "SIGHT_DATE": "26-02-2020",
           "FIELD_NAME": "Isoko South ",
+          "GAS_VOLUME": 98430719.01  ,
+          "TIMES_FLARED": 94,
           "SITE_DESC": "",
           "NUM_OBJS": 0,
           "SUS_ACT": "gas_reservation",
@@ -309,6 +339,8 @@
           "SIGHT_ID": 15,
           "SIGHT_DATE": "26-02-2020",
           "FIELD_NAME": "Ukwuani ",
+          "GAS_VOLUME": 98430719.01  ,
+          "TIMES_FLARED": 94,
           "SITE_DESC": "",
           "NUM_OBJS": 0,
           "SUS_ACT": "gas_reservation",

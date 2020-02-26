@@ -4,8 +4,8 @@ var config = {
     showMarkers: true,
     theme: 'light',
     alignment: 'left',
-    title: 'The Title Text of this Story',
-    byline: 'By a Digital Storyteller',
+    title: 'GasHub',
+    byline: '',
     footer: 'Source: source citations, etc.',
     chapters: [
         {
@@ -46,13 +46,83 @@ var config = {
         {
             id: 'reserve',
             title: 'Natural Gas Reserve ',
-            image: './path/to/image/source.png',
+            image: './',
             description: 'Copy these sections to add to your story.',
             location: {
                 center: [5.4, 5.7],
                 zoom: 8.5,
                 pitch: 0,
-                bearing: 360
+                bearing: 0
+            },
+            onChapterEnter: [
+                // {
+                //     layer: 'bunkering',
+                //     opacity: 1
+                // }
+            ],
+            onChapterExit: [
+                // {
+                //     layer: 'bunkering',
+                //     opacity: 0
+                // }
+            ],
+            legend: {
+                title: 'Tis the first',
+                desccription: 'Nallllldsf',
+                data: [
+                    1,
+                    2,
+                    3,
+                    4
+                ]
+            }
+        },
+
+        {
+            id: 'seaports',
+            title: 'Available Seaports ',
+            image: './path/to/image/source.png',
+            description: 'Copy these sections to add to your story.',
+            location: {
+                center: [5.4, 5.7],
+                zoom: 8.5,
+                pitch: 20,
+                bearing: 0
+            },
+            onChapterEnter: [
+                // {
+                //     layer: 'bunkering',
+                //     opacity: 1
+                // }
+            ],
+            onChapterExit: [
+                // {
+                //     layer: 'bunkering',
+                //     opacity: 0
+                // }
+            ],
+            legend: {
+                title: 'Tis the first',
+                desccription: 'Nallllldsf',
+                data: [
+                    1,
+                    2,
+                    3,
+                    4
+                ]
+            }
+        },
+
+        {
+            id: 'water',
+            title: 'Main Water ways ',
+            image: './path/to/image/source.png',
+            description: 'Copy these sections to add to your story.',
+            location: {
+                center: [5.4, 5.7],
+                zoom: 8.5,
+                pitch: 20,
+                bearing: 0
             },
             onChapterEnter: [
                 // {
@@ -77,6 +147,8 @@ var config = {
                 ]
             }
         }
+
+
     ]
 };
 
