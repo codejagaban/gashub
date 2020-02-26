@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+  
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color:none;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+body {font-family: lato;}
+
+/* Style the tab */
+.tab {
+  overflow: hidden;
+
+
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 22px;
+  margin-left:300px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+ border-bottom: 1px solid red;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  border-bottom: 3px solid red;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+ 
+  border-top: none;
+}
+
+h2{
+ font-family: sans-serif;
+ margin-right: :60px;
+padding-top: -30%;
+font-size: 30px;
+}
+
+box{
+
+  width: 200px;
+  height: 200px;
+  float: left;
+  margin-left:150px;
+    margin-top:30px;
+
+}
+
+box1{
+
+  width: 500px;
+  height: 500px;
+  float: right;
+  margin-right:200px;
+    margin-top:30px;
+background-color: #F6F7FB;
+  border-radius:25px  25px 0px 0px;
+
+}
+box33{
+
+  width: 1200px;
+  height: 500px;
+  float: right;
+  margin-right:200px;
+    margin-top:30px;
+
+  border-radius:25px  25px 0px 0px;
+
+}
+
+box2{
+
+  width: 450px;
+  height: 350px;
+  float: left;
+  margin-left:20px;
+    margin-top:30px;
+
+
+}
+
+bs{
+
+  width: 450px;
+  height: 350px;
+  float: left;
+  margin-left:150px;
+    margin-top:30px;
+
+}
+bs2{
+
+  width: 450px;
+  height: 350px;
+  float: left;
+  margin-left:150px;
+    margin-top:30px;
+
+border-right:1px solid black;
+}
+.button2 {
+   background-color:red;
+  border: none;
+  color: white;
+
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  margin-left:50px;
+
+
+box3{
+
+  width: 700px;
+  height: 500px;
+  float: left;
+ 
+    margin-top:30px;
+background-color: #F6F7FB;
+border: 1px solid black;
+}
+
+.button2 {
+  
+  border: 2px solid red;
+  color: black;
+background-color:white; 
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  margin-left:30px;
+  border-radius: 20px;
+}
+
+
+
+#example2 {
+  
+  padding: 10px;
+  margin-left: 130px; 
+  margin-top: 50px; 
+  box-shadow: 8px 8px 8px 8px #F3F3F3;
+  border-radius:25px  25px 0px 0px;
+  width: 80%;
+  height:500px;
+  float: left;
+}
+
+table, th, td {
+  border: 1px solid black;
+  border-left: none;
+   border-bottom: none;
+    border-top: none;
+  border-collapse: collapse;
+
+}
+
+
+
+</style>
+</head>
+<body>
+<h2><center><img src="img/logo2.png" style="margin-right:50px; margin-bottom:  ">DELTA STATE GAS STATISTICS</center></h2>
+
+<div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'London')" id="defaultOpen">Problems</button>
+  <button class="tablinks" onclick="openCity(event, 'Paris')">Posibilities</button>
+  <button class="tablinks" onclick="openCity(event, 'Tokyo')">Opportunities</button>
+</div>
+
+<div id="London" class="tabcontent">
+  <box>
+
+
+
+<!-- Trigger/Open The Modal -->
+<b id="myBtn">  <img src="img/gas flare.png" width="150px; height:150px; " > </b>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p> <img src="img/GAS FLARING SITES.png" " ></p>
+  </div>
+
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+
+ 
+
+</box>
+
+
+
+<box>
+
+  <b id="myBtn">  <img src="img/deltans (1).png" width="150px; height:150px; " >  </b>
+  
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p> <img src="img/33.png" ></p>
+  </div>
+
+</div>
+
+</box>
+
+
+
+<box>
+    <b id="myBtn">
+  <img src="img/flare sites.png" width="150px; height:150px; "  > 
+ </b>
+
+
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p> <img src="img/33.png" " ></p>
+  </div>
+
+</div>
+</box>
+
+
+
+<box>    <b id="myBtn">
+  <img src="img/giga watts.png" width="150px; height:150px; "  > 
+
+</b>
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p> <img src="img/giga herts.png" " ></p>
+  </div>
+
+</div>
+</box>
+
+
+
+<box>
+
+  <b id="myBtn">
+  <img src="img/unemployed idiots.png" width="150px; height:150px; " > 
+
+</b>
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p> <img src="img/unemployment.png" ></p>
+  </div>
+
+</div>
+</box>
+
+
+
+<box>
+  <img src="img/people killed.png" width="150px; height:150px; "  > 
+
+</box>
+
+
+
+<box>
+  <img src="img/naira lost.png" width="150px; height:150px; "  > 
+
+</box>
+
+<box>
+  <img src="img/c02 emmision.png" width="150px; height:150px; "  > 
+
+</box>
+<center>
+  <a href="/build/index.html" class="button2"  value="View Map">
+</center>
+</div>
+<div id="Paris"class="tabcontent" ">
+<div id="example2"><center>
+
+<box33>
+  <center>
+<img src="img/capp.jpg">
+
+</center>
+</box33>
+</div>
+</div>
+
+<div id="Tokyo" class="tabcontent" >
+ <div id="example2" ><center>
+
+  <bs><img src="img/cloud with text (1).png"></bs>
+<box1>
+
+  <input type="button" class="button2"  value="Opportunities Cost for Flaring Gas ">
+  <box2><img src="img/Capture.jpg"></box2></box1>
+
+
+</div>
+</div>
+
+<script>
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+   
+
+<script>
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+
+
+
+</body>
+</html> 

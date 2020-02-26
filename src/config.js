@@ -9,32 +9,6 @@ var config = {
     footer: 'Source: source citations, etc.',
     chapters: [
         {
-            id: 'slug-style-id',
-            title: 'Display Title',
-            image: './path/to/image/source.png',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint oading lpa qui officia deserunt mollit anim id est laborum.',
-            location: {
-                center: [6, 5.6],
-                zoom: 8.4,
-                bearing: 0,
-                pitch: 0,
-               
-            },
-            onChapterEnter: [
-                // {
-                //     layer: 'layer-name',
-                //     opacity: 1
-                // }
-            ],
-            onChapterExit: [
-                // {
-                //     layer: 'layer-name',
-                //     opacity: 0
-                // }
-            ],
-          
-        },
-        {
             id: 'reserve',
             title: 'Natural Gas Reserve ',
             image: './gas.jpg',
