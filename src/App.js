@@ -148,6 +148,10 @@ class App extends Component {
                         "id": "waters",
                         "type": "fill",
                         "source": "waters",
+                        "transition": {
+                            "duration": 300,
+                            "delay": 0.2
+                          },
                         "layout": {'visibility': 'none'},
                         "paint": {
                             "fill-color": "#2244bf",
@@ -164,6 +168,10 @@ class App extends Component {
                         "type": "line",
                         "source": "pipelines",
                         "layout": {'visibility' : 'none'},
+                        "transition": {
+                            "duration": 500,
+                            "delay": 0.5
+                          },
                         "paint": {
                             "line-color": "#9716ce",
                             "line-opacity": 1,
@@ -180,6 +188,10 @@ class App extends Component {
                         "type": "line",
                         "source": "road-express",
                         "layout": {'visibility' : 'none'},
+                        "transition": {
+                            "duration": 300,
+                            "delay": 0.1
+                          },
                         "paint": {
                             "line-color": "#1116ce",
                             "line-opacity": 1,

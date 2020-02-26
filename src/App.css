@@ -1,11 +1,24 @@
-@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+html {
+  scroll-behavior: smooth;
+}
 
+@font-face {
+  font-family: "sans go";
+  src: url('./fonts/sans-g.ttf') format('truetype');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "sans go";
+  src: url('./fonts/sans-g.ttf') format('truetype');
+  font-weight: normal;
+}
 
 body {
   margin:0; 
   padding:0; 
   font-size: 15px;
-  font-family:'Lato', sans-serif;
+  font-family: "sans go", san-serif !important;
 }
 a, a:hover, a:visited {
   color: #0071bc;

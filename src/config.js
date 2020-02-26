@@ -37,7 +37,7 @@ var config = {
         {
             id: 'reserve',
             title: 'Natural Gas Reserve ',
-            image: '/gas.jpg',
+            image: './gas.jpg',
             description: ' According to Nigerian National Petroleum Corporation (NNPC), Nigeria has around 202 trillion cubic feet (Tcf) of proven gas reserves plus about 600 TCF unproven gas reserves. There is no data for the number of gas reserves in Delta state, so we aggregated the total number of flared gas, spread across 15 LGA\'s in Delta, totaling 528 million cube feet (Mcf). We have about 42 onshore locations where gas are been flared in Delta State.',
             location: {
                 center: [6, 5.6],
@@ -57,7 +57,7 @@ var config = {
         {
             id: 'seaports',
             title: 'Available Seaports ',
-            // image: './path/to/image/source.png',
+            image: './seaport.jpg',
             description: `Delta state has three (3) seaports spread across three (3) local governments area in Delta state. Namely <li>Burutu ( with a depth of 21 - 25 feet, 6.4m - 7.6 m)</li> <li>Sapele ( with a depth of 16 - 20 feet, 4.9m - 6.1 m) </li> <li>Warri ( with a depth of 21 - 25, feet 6.4m - 7.6 m).</li>`,
             location: {
                 center: [6, 5.7],
@@ -78,7 +78,7 @@ var config = {
             id: 'waters',
             title: 'Major Rivers ',
             // image: './path/to/image/source.png',
-            description: 'Copy these sections to add to your story.',
+            description: 'Out of the 15 local governments that flare gas, thirteen (13) out of fifteen (15) have major rivers passing through them. Namely: <li>Burutu</li> <li>Sapele</li> <li>Warri South</li> <li>Warri North</li> <li>Warri south-west</li> <li>Ughelli North</li><li>Ughelli South</li> <li>Ndokwa East</li> <li>Ndokwa West</li> <li>Udu</li> <li>Isoko North</li><li>Isoko South</li> <li>Uvwie</li>',
             location: {
                 center: [6, 5.7],
                 zoom: 8.5,
@@ -98,8 +98,8 @@ var config = {
         {
             id: 'gas-existing', 
             title: 'Existing Gas Plants',
-            image: './path/to/image/source.png',
-            description: 'Copy these sections to add to your story.',
+            // image: './path/to/image/source.png',
+            description: 'In Delta state, there are two (2) existing gas plant, located at Ughelli North and Ughelli South.',
             location: {
                 center: [6, 5.7],
                 zoom: 8.8,
