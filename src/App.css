@@ -252,7 +252,7 @@ a, a:hover, a:visited {
   transition: 1.5s height cubic-bezier(0.6, 0.4, 0.4, 1.1);
 }
 .chartBars .bars li .bar:after {
-  content: ' Meters';
+  content: ' Feets';
   font-size: 22px !important;
   vertical-align: top;
   color: rgba(255, 255, 255, 0.8);
@@ -367,7 +367,7 @@ a, a:hover, a:visited {
 }
 .bars li .bar.greenBar {
   background-color: #6B8E23;
-  background: radial-gradient(#99cb32, #6B8E23);
+  background: radial-gradient(#19c928, #6B8E23);
 }
 .bars li .bar.greenBarFlat {
   background-color: #6B8E23;

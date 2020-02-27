@@ -8,18 +8,20 @@ var config = {
     byline: '',
     footer: 'Source: source citations, etc.',
     chapters: [
+
+        
         {
             id: 'reserve',
             title: 'Natural Gas Reserve ',
             chart: `<div id="doughnutChart" class="chart"></div>  `,
             // image: './gas.jpg',
-            description: ' According to Nigerian National Petroleum Corporation (NNPC), Nigeria has around 202 trillion cubic feet (Tcf) of proven gas reserves plus about 600 TCF unproven gas reserves. There is no data for the number of gas reserves in Delta state, so we aggregated the total number of flared gas, spread across 15 LGA\'s in Delta, totaling 528 million cube feet (Mcf). We have about 42 onshore locations where gas are been flared in Delta State.',
+            description: ' According to Nigerian National Petroleum Corporation (NNPC), Nigeria has around 202 trillion cubic feet (Tcf) of proven gas reserves plus about 600 TCF unproven gas reserves. There is no data for the number of gas reserves in Delta state, so we aggregated the total number of flared gas, spread across 15 LGA\'s in Delta, totaling 462 million cube feet (Mcf). We have about 42 onshore locations where gas are been flared in Delta State.',
             location: {
                 center: [6, 5.8],
                 zoom: 8.5,
                 bearing: 0,
                 pitch: 0,
-                duration: 6000,
+                duration: 1000,
             },
             onChapterEnter: [
             
@@ -54,7 +56,7 @@ var config = {
                 zoom: 8.8,
                 pitch: 40,
                 bearing: 0,
-                duration: 4000,
+                duration: 1000,
             },
             onChapterEnter: [
             
@@ -75,7 +77,7 @@ var config = {
                 zoom: 8.5,
                 pitch: 20,
                 bearing: 0,
-                duration: 6000,
+                duration: 1000,
             },
             onChapterEnter: [
             
@@ -97,7 +99,7 @@ var config = {
                 zoom: 8.8,
                 pitch: 30,
                 bearing: -30,
-                duration: 5000,
+                duration: 1000,
             },
             onChapterEnter: [
             
@@ -114,7 +116,7 @@ var config = {
                 zoom: 8.8,
                 pitch: 0,
                 bearing: 0,
-                duration: 3000,
+                duration: 1000,
             },
             onChapterEnter: [
             
@@ -132,7 +134,7 @@ var config = {
                 zoom: 8.5,
                 pitch: 0,
                 bearing: 0,
-                duration: 4000,
+                duration: 1000,
             },
             onChapterEnter: [
             
@@ -144,13 +146,13 @@ var config = {
         {
             id: 'settlement', 
             title: 'Settlements',
-            // description: 'Copy these sections to add to your story.',
+            description: 'Every gas flaring location in Delta state have settlement around them.',
             location: {
                 center: [6, 5.7],
                 zoom: 8.5,
                 pitch: 0,
                 bearing: 0,
-                duration: 5500,
+                duration: 1000,
             },
             onChapterEnter: [
             
@@ -162,14 +164,15 @@ var config = {
         {
             id: 'bunkering', 
             title: 'Bunkering',
-            // description: 'Copy these sections to add to your story.',
+            description: ` According to available data,there are four (4) locations where illegal bunkering are going on, the map on the right highlights  spread across 4 local government in Delta state. Namely; 
+            <li>Burutu</li> <li> Sapele </li> <li>Ughelli South </li> <li>Warri South- West</li>`,
             location: {
                 center: [6, 5.7],
                 zoom: 8.5,
                 pitch: 0,
                 bearing: 0,
-                duration: 3000,
-                
+                duration: 1000,
+                    
             },
             onChapterEnter: [
             
@@ -181,13 +184,14 @@ var config = {
         {
             id: 'result', 
             title: 'Results',
-            // description: 'Copy these sections to add to your story.',
+            description: 'Suming up all the data, a few locations fit suitable for a GAS PLANT location.',
+            image: './most.png',
             location: {
                 center: [6, 5.7],
                 zoom: 8.5,
                 pitch: 0,
                 bearing: 0,
-                duration: 4000,
+                duration: 1000,
             },
             onChapterEnter: [
             
