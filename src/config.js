@@ -11,18 +11,7 @@ var config = {
         {
             id: 'reserve',
             title: 'Natural Gas Reserve ',
-            chart: `<div class="pie-container">
-     
-              <div class="col-md-5" id="pieChart"></div>
-              <div id="pieText" class="col-md-7 text-container">
-                <div class="panel">
-                  <div class="content-wrapper">
-                    <h1 id="segmentTitle">Select Fragment</h1>
-                    <p id="segmentText">Detailed information about internal systems and business operations.</p>
-                  </div>
-                </div>
-              </div>
-          </div>`,
+            chart: `<div id="doughnutChart" class="chart"></div>  `,
             // image: './gas.jpg',
             description: ' According to Nigerian National Petroleum Corporation (NNPC), Nigeria has around 202 trillion cubic feet (Tcf) of proven gas reserves plus about 600 TCF unproven gas reserves. There is no data for the number of gas reserves in Delta state, so we aggregated the total number of flared gas, spread across 15 LGA\'s in Delta, totaling 528 million cube feet (Mcf). We have about 42 onshore locations where gas are been flared in Delta State.',
             location: {
@@ -43,7 +32,21 @@ var config = {
         {
             id: 'seaports',
             title: 'Available Seaports ',
-            image: './seaport.jpg',
+            chart: `<div class="chartBarsWrap chartBarsHorizontal"> 
+            <div class="chartBars"> 
+                <ul class="bars">  
+                    <li> 
+                        <div data-percentage="25" class="bar darkBlueBarFlat"></div><b>Warri South</b></li>
+                    <li>
+                        <div data-percentage="25" class="bar mediumBlueBarFlat"></div><b>Burutu</b></li>
+                    <li>
+                        <div data-percentage="20" class="bar blueBarFlat"></div><b>Sapele</b></li>
+                
+                </ul>
+            </div>
+        </div>
+        `,
+            // image: './seaport.jpg',
             description: `Delta state has three (3) seaports spread across three (3) local governments area in Delta state. Namely <li>Burutu ( with a depth of 21 - 25 feet, 6.4m - 7.6 m)</li> <li>Sapele ( with a depth of 16 - 20 feet, 4.9m - 6.1 m) </li> <li>Warri ( with a depth of 21 - 25, feet 6.4m - 7.6 m).</li>`,
             location: {
                 center: [6, 5.7],

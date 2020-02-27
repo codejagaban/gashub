@@ -66,7 +66,7 @@ a, a:hover, a:visited {
 }
 .light {
   color: #444;
-  background-color: #fafafa;
+  background-color: #ffffff;
 }
 .dark {
   color: #fafafa;
@@ -81,7 +81,7 @@ a, a:hover, a:visited {
   opacity: 0.9;
 }
 
-.step div {
+.step div.desc {
   padding:  25px 50px;
   line-height: 25px;
   font-size: 16px;
@@ -132,261 +132,438 @@ a, a:hover, a:visited {
 
 
 
-.pie-container {
-  transition: padding .7s ease;
-  padding: 10px 13%;
-}
+.chart {
+  width: 450px;
+  height: 450px;
+  top: 50%;
+  left: 50%;
 
-#pieChart {
-  max-width: none !important;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto;
-  counter-reset: break-point 80;
 }
-#pieChart svg {
-  overflow: visible;
-  transition: width .7s ease;
+.doughnutTip {
+  position: absolute;
+  min-width: 30px;
+  max-width: 300px;
+  padding: 5px 15px;
+  border-radius: 1px;
+  background: rgba(0,0,0,.8);
+  color: #ddd;
+  font-size: 17px;
+  text-shadow: 0 1px 0 #000;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.3;
+  letter-spacing: .06em;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  pointer-events: none;
 }
-#pieChart path {
-  cursor: pointer;
-}
+  .doughnutTip::after {
+      position: absolute;
+      left: 50%;
+      bottom: -6px;
+      content: "";
+      height: 0;
+      margin: 0 0 0 -6px;
+      border-right: 5px solid transparent;
+      border-left: 5px solid transparent;
+      border-top: 6px solid rgba(0,0,0,.7);
+      line-height: 0;
+  }
 
-#pieText {
-  overflow: visible;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.doughnutSummary {
+  position: absolute;
+  top: 50%;
+  display: none;
+  left: 50%;
+  color: red;
+  text-align: center;
+  text-shadow: 0 -1px 0 #111;
+  cursor: default;
 }
-#pieText .panel {
-  background-color: #111;
-  /* width: 100%; */
-  /* height: 60%; */
-  border-radius: 7px;
-  padding: 0 3px;
-  float: left;
-  transition: height .7s ease, padding .7s ease;
-  perspective: 650px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.doughnutSummaryTitle {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  margin-top: -27%;
+  font-size: 22px;
+  letter-spacing: .06em;
 }
+.doughnutSummaryNumber {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  margin-top: -15%;
+  font-size: 55px;
+}
+.chart path:hover { opacity: 0.65; }
 
-.content-wrapper {
+
+
+.chartBarsWrap {
+  padding-left: 40px;
+  margin: 0 30px 0 20px;
+}
+.chartBars {
+  position: relative;
+  max-width: 600px;
+  height: 300px;
+  margin: 50px auto 100px;
+}
+.chartBars .bars {
+  display: -webkit-box;
+  display: flex;
+  justify-content: space-around;
+  border-left: 1px solid #bbb;
+  border-bottom: 1px solid #bbb;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  padding: 0 1%;
+  margin: 0;
+}
+.chartBars .bars li {
+  display: inline-block;
+  -webkit-box-flex: 0;
+          flex: 0 1 24%;
+  height: 100%;
+  margin: 0;
+  text-align: center;
+  position: relative;
+  font-size: 16px;
+}
+.chartBars .bars li .bar {
+  width: 100%;
+  background: #49E;
+  position: absolute;
+  font-size: 1.5em;
+  color: #fff;
+  padding-top: 18px;
+  bottom: 0;
+  height: 0;
   overflow: hidden;
-  transform-style: preserve-3d;
+  font-weight: bold;
+  outline: 2px solid transparent;
+  -webkit-transition: 1.5s height cubic-bezier(0.6, 0.4, 0.4, 1.1);
+  transition: 1.5s height cubic-bezier(0.6, 0.4, 0.4, 1.1);
 }
-
-#segmentTitle, #segmentText {
-  text-shadow: 1px 1px 3px #000, 1px 1px 3px #000;
+.chartBars .bars li .bar:after {
+  content: ' Meters';
+  font-size: 22px !important;
+  vertical-align: top;
+  color: rgba(255, 255, 255, 0.8);
+  margin-right: -8px;
+}
+.chartBars .bars li b {
+  color: #333333;
+  width: 100%;
+  position: absolute;
+  bottom: -2em;
+  left: 0;
   text-align: center;
 }
-
-#segmentTitle {
-  transition: padding .7s ease;
-  padding: 20px;
-  font-size: calc( 19px + (35 - 19) * (100vw - 200px) / (1314 - 200));
+.chartBars .numbers {
+  width: 50px;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  position: absolute;
+  left: -50px;
 }
-@media screen and (max-width: 200px) {
-  #segmentTitle {
-    font-size: 19px;
-  }
+.chartBars .numbers li {
+  text-align: right;
+  padding-right: 1em;
+  list-style: none;
+  height: 59px;
+  position: relative;
+  font-size: 13px;
+  bottom: 11px;
+  right: -9px;
+  color: #333333;
 }
-@media screen and (min-width: 1314px) {
-  #segmentTitle {
-    font-size: 35px;
-  }
+.chartBars .numbers li:after {
+  content: "\00af";
+  position: relative;
+  right: -5px;
+  font-size: 20px;
+  top: 7px;
+  color: rgba(255, 255, 255, 0.34);
 }
-
-#segmentText {
+.chartBars .numbers li:first-of-type {
+  height: 63px;
+  margin-top: -1px;
+}
+.chartBars1 .bar {
+  border-radius: 5px;
+}
+.chartBars2 {
+  max-width: 350px;
+}
+.chartBars2 .bars {
+  padding: 0;
+}
+.chartBars2 .bars li {
+  -webkit-box-flex: 0;
+          flex: 0 1 25%;
+}
+.chartBars2 .bars li .bar {
+  box-shadow: 0 0 20px #222;
+}
+.chartBars3 {
+  background: rgba(255, 255, 255, 0.1);
+  border-top: 1px solid #666;
+  border-right: 1px solid #666;
+}
+.chartBars3 .bars {
+  border-color: #666;
+  padding: 0;
+}
+.chartBars3 .bars li .bar {
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+  font-size: 22px !important;
+}
+.chartBars3 .bars li .bar:after {
+  font-size: 0.6em !important;
+}
+.chartBarsWrap.chartBarsHorizontal {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  padding-left: 70px;
+}
+.chartBarsWrap.chartBarsHorizontal .bars b {
+  color: #333333 ;
   width: 100%;
-  transition: padding .7s ease, line-height .7s ease;
-  padding: 15px 20px 20px;
-  font-size: calc( 14px + (21 - 14) * (100vw - 200px) / (1314 - 200));
-  line-height: 28px;
+  position: absolute;
+  bottom: initial;
+  top: 1em;
+  left: -102%;
+  text-align: right;
 }
-@media screen and (max-width: 200px) {
-  #segmentText {
-    font-size: 14px;
-  }
+.chartBarsWrap.chartBarsHorizontal .chartBars {
+  height: 200px;
 }
-@media screen and (min-width: 1314px) {
-  #segmentText {
-    font-size: 21px;
-  }
+.chartBarsWrap.chartBarsHorizontal .chartBars .bars {
+  border: 0;
+}
+.chartBarsWrap.chartBarsHorizontal .chartBars .bars .bar {
+  width: 0;
+  padding-top: 10px;
+  height: 100% !important;
+  text-align: right;
+  font-size: 1.5em;
+  -webkit-transition: 2s width cubic-bezier(0.6, 0.4, 0.4, 1.1);
+  transition: 2s width cubic-bezier(0.6, 0.4, 0.4, 1.1);
+}
+.chartBarsWrap.chartBarsHorizontal .chartBars .bars .bar:after {
+  font-size: 0.6em !important;
+  margin-right: 20px;
+}
+.bars li .bar.greenBar {
+  background-color: #6B8E23;
+  background: radial-gradient(#99cb32, #6B8E23);
+}
+.bars li .bar.greenBarFlat {
+  background-color: #6B8E23;
+}
+.bars li .bar.blueBar {
+  background-color: #49E;
+  background: radial-gradient(#8abff4, #49E);
+}
+.bars li .bar.darkBlueBarFlat {
+  background-color: rgb(8, 49, 90);
 }
 
-@media (max-width: 360px) {
-  div.pie-container {
-    padding: 10px 12%;
+.bars li .bar.mediumBlueBarFlat {
+  background-color: rgb(21, 102, 182);
+}
+
+
+.bars li .bar.blueBarFlat {
+  background-color: #49E;
+}
+.bars li .bar.orangeBar {
+  background-color: orange;
+  background: radial-gradient(#ffc04d, #FFA500);
+}
+.bars li .bar.orangeBarFlat {
+  background-color: orange;
+}
+.bars li .bar.purpleBar {
+  background-color: #6e46af;
+  background: radial-gradient(#9778c9, #6e46af);
+}
+.bars li .bar.purpleBarFlat {
+  background-color: #6e46af;
+}
+.box-piesite {
+  text-align: center;
+  font-size: 22px;
+}
+.piesite {
+  position: relative;
+  width: 1em;
+  height: 1em;
+  font-size: 10em;
+  cursor: default;
+}
+.piesite .percent {
+  position: absolute;
+  top: 1.1em;
+  left: 0.1em;
+  width: 100%;
+  font-size: 0.3em;
+  text-align: center;
+  z-index: 2;
+}
+.piesite .percent .symbol {
+  font-size: 0.5em;
+  vertical-align: top;
+  opacity: 0.5;
+}
+.piesite > #slice {
+  position: absolute;
+  width: 1em;
+  height: 1em;
+  clip: rect(0px, 1em, 1em, 0.5em);
+}
+.piesite > #slice.gt50 {
+  clip: rect(auto, auto, auto, auto);
+}
+.piesite > #slice > .pie {
+  position: absolute;
+  border: 0.1em solid #444;
+  width: 1em;
+  height: 1em;
+  clip: rect(0em, 0.5em, 1em, 0em);
+  border-radius: 0.5em;
+}
+li.design .piesite > #slice > .pie {
+  border-color: #49E;
+}
+li.usability .piesite > #slice > .pie {
+  border-color: #FFA500;
+}
+li.creativity .piesite > #slice > .pie {
+  border-color: #6B8E23;
+}
+.piesite > #slice > .pie.fill {
+  -webkit-transform: rotate(180deg) !important;
+  transform: rotate(180deg) !important;
+}
+.piesite.fill > .percent {
+  display: none;
+}
+.piesite:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0.1em;
+  left: 0.1em;
+  width: 0.8em;
+  height: 0.8em;
+  background: #30303A;
+  border-radius: 100%;
+  z-index: 1;
+}
+.piesite:before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 1em;
+  height: 1em;
+  border-radius: 0.5em;
+  opacity: 0.5;
+  z-index: 0;
+}
+.piesite:before {
+  /* background: rgba(255, 255, 255, 0.1); */
+}
+.box-piesite ul {
+  padding: 0;
+}
+.box-piesite ul li {
+  display: inline-block;
+  margin: 10px 20px;
+}
+.chartBarsHorizontal .chartBars .bars {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+}
+@media screen and (min-width: 600px) {
+  .bar:before {
+    font-size: 2em !important;
   }
-  div.pie-container #pieChart {
-    counter-reset: break-point 40;
-  }
-  div.pie-container #pieChart svg {
-    width: 100%;
-  }
-  div.pie-container #pieText {
-    margin-top: 15px;
-  }
-  div.pie-container #pieText .panel {
-    height: 230px;
-    padding: 0;
-  }
-  div.pie-container #pieText .panel #segmentTitle {
-    padding: 2px 4px 4px;
-  }
-  div.pie-container #pieText .panel #segmentText {
-    padding: 2px 4px 4px;
-    line-height: 16px;
+  .chartBars3 .bar:before {
+    font-size: 1.5em !important;
   }
 }
-@media (min-width: 360.02px) and (max-width: 442px) {
-  div.pie-container {
-    padding: 10px 10%;
-  }
-  div.pie-container #pieChart {
-    counter-reset: break-point 53;
-  }
-  div.pie-container #pieChart svg {
-    width: 70%;
-  }
-  div.pie-container #pieText {
-    margin-top: 15px;
-  }
-  div.pie-container #pieText .panel {
-    height: 210px;
-    padding: 0;
-  }
-  div.pie-container #pieText .panel #segmentTitle {
-    padding: 4px;
-  }
-  div.pie-container #pieText .panel #segmentText {
-    padding: 4px;
-    line-height: 18px;
-  }
+.tooltip > .tooltipContent {
+  display: block;
+  position: absolute;
+  background: none repeat scroll 0 0 #222;
+  color: #F0B015;
+  font-family: 'Helvetica';
+  font-size: 0.8em;
+  font-weight: normal;
+  line-height: 1.5em;
+  padding: 16px 15px;
+  min-width: 200px;
+  max-width: 500px;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translate(-50%, -110%);
+          transform: translate(-50%, -110%);
+  margin-left: 0;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  text-align: center;
+  z-index: 2;
+  text-transform: none;
+  -webkit-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
-@media (min-width: 442.02px) and (max-width: 575.98px) {
-  div.pie-container {
-    padding: 10px 10%;
-  }
-  div.pie-container #pieChart {
-    counter-reset: break-point 60;
-  }
-  div.pie-container #pieChart svg {
-    width: 70%;
-  }
-  div.pie-container #pieText {
-    margin-top: 15px;
-  }
-  div.pie-container #pieText .panel {
-    height: 200px;
-    padding: 0;
-  }
-  div.pie-container #pieText .panel #segmentTitle {
-    padding: 4px;
-  }
-  div.pie-container #pieText .panel #segmentText {
-    padding: 0 4px 4px;
-    line-height: 21px;
-  }
+.tooltip:hover > .tooltipContent {
+  opacity: 1;
+  filter: alpha(opacity=100);
+  z-index: 99;
+  -webkit-transform: translate(-50%, -130%);
+          transform: translate(-50%, -130%);
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
 }
-@media (min-width: 576px) and (max-width: 637.98px) {
-  div.pie-container {
-    padding: 10px 12%;
-  }
-  div.pie-container #pieChart {
-    counter-reset: break-point 70;
-  }
-  div.pie-container #pieChart svg {
-    width: 60%;
-  }
-  div.pie-container #pieText {
-    margin-top: 20px;
-  }
-  div.pie-container #pieText .panel {
-    padding: 0;
-    height: 205px;
-  }
-  div.pie-container #pieText .panel #segmentTitle {
-    padding: 8px;
-  }
-  div.pie-container #pieText .panel #segmentText {
-    padding: 0 8px 8px;
-    line-height: 24px;
-  }
+.tooltip .tooltipContent:after {
+  border-color: #222 rgba(0, 0, 0, 0);
+  border-style: solid;
+  border-width: 15px 15px 0;
+  bottom: -15px;
+  content: "";
+  display: block;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+  position: absolute;
+  width: 0;
 }
-@media (min-width: 638px) and (max-width: 767px) {
-  div.pie-container {
-    padding: 10px 15%;
-  }
-  div.pie-container #pieChart {
-    counter-reset: break-point 80;
-  }
-  div.pie-container #pieChart svg {
-    width: 60%;
-  }
-  div.pie-container #pieText {
-    margin-top: 20px;
-  }
-  div.pie-container #pieText .panel {
-    padding: 0 3px;
-    height: 270px;
-  }
-  div.pie-container #pieText .panel #segmentTitle {
-    padding: 15px;
-  }
-  div.pie-container #pieText .panel #segmentText {
-    padding: 15px;
-    line-height: 27px;
-  }
+
+h1,
+h2,
+h3 {
+  text-align: center;
 }
-@media (min-width: 767.02px) and (max-width: 965px) {
-  div.pie-container {
-    padding: 10px 4%;
-  }
-  div.pie-container #pieChart {
-    counter-reset: break-point 50;
-  }
-  div.pie-container #pieText .panel {
-    height: 82%;
-    padding: 0;
-  }
-  div.pie-container #pieText .panel #segmentTitle {
-    padding: 8px;
-  }
-  div.pie-container #pieText .panel #segmentText {
-    padding: 0 8px 8px;
-    line-height: 23px;
-  }
+h1 {
+  margin: 100px auto 0;
+  color: #F0B015;
 }
-@media (min-width: 965.02px) and (max-width: 1314px) {
-  div.pie-container {
-    padding: 10px 5%;
-  }
-  div.pie-container #pieChart {
-    counter-reset: break-point 60;
-  }
-  div.pie-container #pieText .panel {
-    height: 70%;
-  }
-  div.pie-container #pieText .panel #segmentTitle {
-    padding: 10px;
-  }
-  div.pie-container #pieText .panel #segmentText {
-    padding: 5px 10px 10px;
-  }
+h2 {
+  margin: 20px auto 0;
+  font-size: 1.2em;
 }
-@media (min-width: 1314.02px) and (max-width: 1480px) {
-  div.pie-container {
-    padding: 10px 8%;
-  }
-  div.pie-container #pieChart {
-    counter-reset: break-point 70;
-  }
-  div.pie-container #pieText .panel #segmentText {
-    padding-top: 10px;
-  }
+p {
+  margin: 5vw auto;
+  padding: 0 5vw;
+  line-height: 2em;
+  max-width: 60em;
 }

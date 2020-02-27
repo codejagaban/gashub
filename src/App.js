@@ -535,19 +535,19 @@ function Chapter({id, theme, title, image, description, chart, currentChapterID}
     return (
         <Fragment>
         <div id={id} className={classList}>
-            <div className={theme}>
+            <div className={`${theme} desc`}>
                 { title &&
                     <h3 className="title">{title}</h3>
                 }
                   { chart &&
-                 <section dangerouslySetInnerHTML={{__html: chart}}></section>
+                 <div dangerouslySetInnerHTML={{__html: chart}}></div>
               
                 }
                 { image &&
                     <img src={image} alt={title}></img>
                 }
                 { description &&
-                 <section dangerouslySetInnerHTML={{__html: description}}></section>
+                 <div dangerouslySetInnerHTML={{__html: description}}></div>
               
                 }
             </div>
