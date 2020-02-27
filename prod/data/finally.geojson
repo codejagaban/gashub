@@ -1,0 +1,101 @@
+
+{
+    "type": "FeatureCollection",
+    "name": "gas_reserve",
+    "features": [
+      {
+        "type": "Feature",
+        "properties": {
+          "OBJECTID": 1,
+          "SIGHT_ID": 1,
+          "SIGHT_DATE": "26-02-2020",
+          "FIELD_NAME": "Sapele",
+          "SUITABLE" : 6,
+          "SITE_DESC": "",
+          "NUM_OBJS": 0,
+          "SUS_ACT": "gas_reservation",
+          "LONG_DEC": 5.6842,
+          "LAT_DEC":  5.8907
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            
+            5.6842,
+             5.8907          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "OBJECTID": 2,
+          "SIGHT_ID": 2,
+          "SIGHT_DATE": "26-02-2020",
+          "FIELD_NAME": "Warri South",
+          "SUITABLE" : 3,
+          "SITE_DESC": "",
+          "NUM_OBJS": 0,
+          "SUS_ACT": "gas_reservation",
+          "LONG_DEC": 5.6609,
+          "LAT_DEC": 5.6037
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            
+            
+          5.6037,
+            5.6609
+               ]
+        }
+      },
+
+      {
+        "type": "Feature",
+        "properties": {
+          "OBJECTID": 3,
+          "SIGHT_ID": 3,
+          "SIGHT_DATE": "26-02-2020",
+          "FIELD_NAME": "Warri North",
+          "SUITABLE" : 9,
+          "SITE_DESC": "",
+          "NUM_OBJS": 0,
+          "SUS_ACT": "gas_reservation",
+          "LONG_DEC": 5.1432,
+          "LAT_DEC": 5.9593
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            5.1432,
+            5.9593
+           
+          ]
+        }
+      },
+
+      {
+        "type": "Feature",
+        "properties": {
+          "OBJECTID": 4,
+          "SIGHT_ID": 4,
+          "SIGHT_DATE": "26-02-2020",
+          "FIELD_NAME": "Ndokwa East",
+          "SITE_DESC": "",
+          "SUITABLE" : 5,
+          "NUM_OBJS": 0,
+          "SUS_ACT": "gas_reservation",
+          "LONG_DEC": 6.5356,
+          "LAT_DEC": 5.6511
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            
+            6.5356,
+            5.6511
+          ]
+        }
+      }
+    ]
+  }
