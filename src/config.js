@@ -104,7 +104,7 @@ var config = {
         {
             id: 'pipelines', 
             title: 'Pipelines',
-            // description: 'Copy these sections to add to your story.',
+            description: 'Gas Pipelines passed through (10) locations in Delta state, with some locations having more than just one gas pipeline passing through them..',
             location: {
                 center: [6, 5.7],
                 zoom: 8.8,

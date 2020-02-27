@@ -231,6 +231,36 @@ class App extends Component {
 
 
 
+                        map.loadImage("/house.png", function(error, image) {
+                            if (error) throw error;
+                            map.addImage("pipeline-marker", image);
+    
+                        map.addSource('pipeline', {
+                            type: 'geojson',
+                            data: 'data/pipeline.geojson'
+                          });
+                          
+                        
+                            map.addLayer({ 
+                                id: "pipeline",
+                                type: "symbol",
+                                source:'pipeline',
+                                "transition": {
+                                    "duration": 300,
+                                    "delay": 0
+                                  },
+                                    layout: {
+                                        "icon-image": "pipeline-marker",
+                                        'visibility': 'none',
+                                    }
+                                    });
+                            });
+
+
+
+
+
+
 
 
                     
@@ -456,38 +486,7 @@ class App extends Component {
 
 
                     <div id="story">
-            {/* <Container>
-                <Row>
-                  
-                    <Col md="8" className="mx-auto">
-                    <ButtonToolbar className="link">
- 
- <Button  className="btn-summary">Reserve</Button>
- <Button  className="btn-summary">Seaport</Button>
- <Button  className="btn-summary">Road</Button>
- <Button  className="btn-summary">Pipeline</Button>
- <Button  className="btn-summary">Road</Button>
- <Button  className="btn-summary">Vegetation</Button>
- <Button  className="btn-summary">Conflicts</Button>
- <Button  className="btn-summary">Existing Gas Plants</Button>
- <Button  className="btn-summary">Road</Button>
-
-</ButtonToolbar>
-                    </Col>
-                </Row>
-           
-            </Container> */}
-                    {config.title &&
-                        <div id="header" className={theme}>
-                            <h1>{config.title}</h1>
-                            {config.subtitle &&
-                                <h2>{config.subtitle}</h2>
-                            }
-                            {config.byline &&
-                               <div dangerouslySetInnerHTML={{__html: config.byline}}></div>
-                            }
-                        </div>
-                    }
+          
                    
 
                     <div id="features" className={alignments[config.alignment]}>
