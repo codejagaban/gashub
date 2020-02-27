@@ -88,6 +88,7 @@ a, a:hover, a:visited {
 }
 .mapboxgl-popup {
   max-width: 400px;
+  padding: 20px 30px !important;
   font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
   }
 
@@ -106,13 +107,14 @@ a, a:hover, a:visited {
 
 
 #legend {
-  padding-bottom: 50vh;
   padding:  25px 50px;
+  background-color: #444;
   line-height: 25px;
+  /* position: fixed; */
   float: right;
-  margin-top: -50vh;
-  margin-right: 10%;
+  margin-top: 80vh;
   font-size: 13px;
+  /* z-index: 100; */
 }
 
 
@@ -193,6 +195,7 @@ a, a:hover, a:visited {
 .doughnutSummaryNumber {
   position: absolute;
   top: 5%;
+  left: 37%;
   width: 100%;
   margin-top: 8%;
   font-size: 33px;
@@ -549,24 +552,4 @@ li.creativity .piesite > #slice > .pie {
           transform: translate(-50%, 0);
   position: absolute;
   width: 0;
-}
-
-h1,
-h2,
-h3 {
-  text-align: center;
-}
-h1 {
-  margin: 100px auto 0;
-  color: #F0B015;
-}
-h2 {
-  margin: 20px auto 0;
-  font-size: 1.2em;
-}
-p {
-  margin: 5vw auto;
-  padding: 0 5vw;
-  line-height: 2em;
-  max-width: 60em;
 }

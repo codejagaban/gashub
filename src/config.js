@@ -15,10 +15,11 @@ var config = {
             // image: './gas.jpg',
             description: ' According to Nigerian National Petroleum Corporation (NNPC), Nigeria has around 202 trillion cubic feet (Tcf) of proven gas reserves plus about 600 TCF unproven gas reserves. There is no data for the number of gas reserves in Delta state, so we aggregated the total number of flared gas, spread across 15 LGA\'s in Delta, totaling 528 million cube feet (Mcf). We have about 42 onshore locations where gas are been flared in Delta State.',
             location: {
-                center: [6, 5.6],
-                zoom: 8.4,
+                center: [6, 5.8],
+                zoom: 8.5,
+                bearing: 0,
                 pitch: 0,
-                bearing: 0
+                duration: 6000,
             },
             onChapterEnter: [
             
@@ -49,10 +50,11 @@ var config = {
             // image: './seaport.jpg',
             description: `Delta state has three (3) seaports spread across three (3) local governments area in Delta state. Namely <li>Burutu ( with a depth of 21 - 25 feet, 6.4m - 7.6 m)</li> <li>Sapele ( with a depth of 16 - 20 feet, 4.9m - 6.1 m) </li> <li>Warri ( with a depth of 21 - 25, feet 6.4m - 7.6 m).</li>`,
             location: {
-                center: [6, 5.7],
-                zoom: 8.5,
+                center: [6.2, 5.7],
+                zoom: 8.8,
                 pitch: 40,
-                bearing: 0
+                bearing: 0,
+                duration: 4000,
             },
             onChapterEnter: [
             
@@ -72,7 +74,8 @@ var config = {
                 center: [6, 5.7],
                 zoom: 8.5,
                 pitch: 20,
-                bearing: 0
+                bearing: 0,
+                duration: 6000,
             },
             onChapterEnter: [
             
@@ -93,7 +96,8 @@ var config = {
                 center: [6, 5.7],
                 zoom: 8.8,
                 pitch: 30,
-                bearing: -30
+                bearing: -30,
+                duration: 5000,
             },
             onChapterEnter: [
             
@@ -109,7 +113,8 @@ var config = {
                 center: [6, 5.7],
                 zoom: 8.8,
                 pitch: 0,
-                bearing: 0
+                bearing: 0,
+                duration: 3000,
             },
             onChapterEnter: [
             
@@ -126,7 +131,8 @@ var config = {
                 center: [6, 5.7],
                 zoom: 8.5,
                 pitch: 0,
-                bearing: 0
+                bearing: 0,
+                duration: 4000,
             },
             onChapterEnter: [
             
@@ -143,7 +149,8 @@ var config = {
                 center: [6, 5.7],
                 zoom: 8.5,
                 pitch: 0,
-                bearing: 0
+                bearing: 0,
+                duration: 5500,
             },
             onChapterEnter: [
             
@@ -160,7 +167,27 @@ var config = {
                 center: [6, 5.7],
                 zoom: 8.5,
                 pitch: 0,
-                bearing: 0
+                bearing: 0,
+                duration: 3000,
+                
+            },
+            onChapterEnter: [
+            
+            ],
+            onChapterExit: [],
+          
+        },
+
+        {
+            id: 'result', 
+            title: 'Results',
+            // description: 'Copy these sections to add to your story.',
+            location: {
+                center: [6, 5.7],
+                zoom: 8.5,
+                pitch: 0,
+                bearing: 0,
+                duration: 4000,
             },
             onChapterEnter: [
             

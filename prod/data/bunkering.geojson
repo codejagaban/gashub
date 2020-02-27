@@ -7,7 +7,7 @@
         "type": "Feature",
         "properties": {
           "OBJECTID": 1,
-          "SIGHT_ID": 1,
+          "SIGHT_ID": 1,  
           "SIGHT_DATE": "26-02-2020",
           "FIELD_NAME": "Sapele",
           "GAS_VOLUME": 59565265.98,

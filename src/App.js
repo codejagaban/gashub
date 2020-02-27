@@ -55,6 +55,7 @@ class App extends Component {
             style: config.style,
             center: mapStart.center,
             zoom: mapStart.zoom,
+            fadeDuration: mapStart.duration,
             pitch: mapStart.pitch,
             bearing: mapStart.bearing,
             transformRequest: transformRequest
@@ -82,13 +83,20 @@ class App extends Component {
         // instantiate the scrollama
         const scroller = scrollama();
 
-
+        map.on('style.load', function () {
+            map.rotateTo(45.0, {
+                duration: 10000
+            });
+      
+    })
         
         map.on('load', function () {
 
+            
+
                 // 2. reservechapterName
 
-                map.loadImage("/reserve.png", function(error, image) {
+                map.loadImage("/marker.png", function(error, image) {
                     if (error) throw error;
                     map.addImage("custom-marker", image);
                     map.addSource('reserve', {
@@ -100,10 +108,7 @@ class App extends Component {
                         id: "reserve",
                         type: "symbol",
                         source:'reserve',
-                        "transition": {
-                            "duration": 300,
-                            "delay": 0
-                          },
+                        
                             layout: {
                                 "icon-image": "custom-marker",
                                 'icon-allow-overlap': true,
@@ -129,10 +134,7 @@ class App extends Component {
                         id: "seaports",
                         type: "symbol",
                         source:'seaports',
-                        "transition": {
-                            "duration": 300,
-                            "delay": 0
-                          },
+                       
                             layout: {
                                 "icon-image": "seaport-marker",
                                 'visibility': 'none',
@@ -150,7 +152,7 @@ class App extends Component {
                       map.addLayer({
                         "id": "waters",
                         "type": "fill",
-                        "source": "waters",
+                        "source": "waters", 
                         "transition": {
                             "duration": 300,
                             "delay": 0.2
@@ -191,10 +193,7 @@ class App extends Component {
                         "type": "line",
                         "source": "road-express",
                         "layout": {'visibility' : 'none'},
-                        "transition": {
-                            "duration": 300,
-                            "delay": 0.1
-                          },
+                       
                         "paint": {
                             "line-color": "#1116ce",
                             "line-opacity": 1,
@@ -218,10 +217,7 @@ class App extends Component {
                             id: "settlement",
                             type: "symbol",
                             source:'settlement',
-                            "transition": {
-                                "duration": 300,
-                                "delay": 0
-                              },
+                         
                                 layout: {
                                     "icon-image": "settlement-marker",
                                     'visibility': 'none',
@@ -245,10 +241,7 @@ class App extends Component {
                                 id: "pipeline",
                                 type: "symbol",
                                 source:'pipeline',
-                                "transition": {
-                                    "duration": 300,
-                                    "delay": 0
-                                  },
+                               
                                     layout: {
                                         "icon-image": "pipeline-marker",
                                         'visibility': 'none',
@@ -281,10 +274,7 @@ class App extends Component {
                         id: "gas-existing",
                         type: "symbol",
                         source:'gas-existing',
-                        "transition": {
-                            "duration": 300,
-                            "delay": 0
-                          },
+                       
                             layout: {
                                 "icon-image": "gas-marker",
                                 'visibility': 'none',
@@ -294,7 +284,7 @@ class App extends Component {
 
 
 
-                    map.loadImage("/marker.png", function(error, image) {
+                    map.loadImage("/gas.png", function(error, image) {
                         if (error) throw error;
                         map.addImage("bunkering-marker", image);
 
@@ -308,10 +298,7 @@ class App extends Component {
                             id: "bunkering",
                             type: "symbol",
                             source:'bunkering',
-                            "transition": {
-                                "duration": 300,
-                                "delay": 0
-                              },
+                           
                                 layout: {
                                     "icon-image": "bunkering-marker",
                                     'visibility': 'none',
@@ -319,8 +306,27 @@ class App extends Component {
                                 });
                         });
 
-
-
+                        map.loadImage("/gas.png", function(error, image) {
+                            if (error) throw error;
+                            map.addImage("result-marker", image);
+    
+                        map.addSource('result', {
+                            type: 'geojson',
+                            data: 'data/finally.geojson'
+                          });
+                          
+                        
+                            map.addLayer({ 
+                                id: "result",
+                                type: "symbol",
+                                source:'result',
+                             
+                                    layout: {
+                                        "icon-image": "result-marker",
+                                        'visibility': 'none',
+                                    }
+                                    });
+                            });
 
 
                            
@@ -427,6 +433,38 @@ class App extends Component {
                 popup.remove();
                 });
 
+              
+                     
+                    map.on('mouseenter', 'settlement', function(e) {
+                    // Change the cursor style as a UI indicator.
+                    map.getCanvas().style.cursor = 'pointer';
+                     
+                    var coordinates = e.features[0].geometry.coordinates.slice();
+                    var description =  `<h6> Location : ${e.features[0].properties.NAME}</h6>`
+                
+                    // Ensure that if the map is zoomed out such that multiple
+                    // copies of the feature are visible, the popup appears
+                    // over the copy being pointed to.
+                    while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+                    coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+                    }
+                     
+                    // Populate the popup and set its coordinates
+                    // based on the feature found.
+                    popup
+                    .setLngLat(coordinates)
+                    .setHTML(description)
+                    .addTo(map);
+                    });
+                     
+                    map.on('mouseleave', 'settlement', function() {
+                    map.getCanvas().style.cursor = '';
+                    popup.remove();
+                    });
+        
+
+                    
+
 
 
                 //Existing gas plants
@@ -459,13 +497,12 @@ class App extends Component {
                 
 
 
-
-                // map.on('style.load', () => {
-                //     map.rotateTo(180.0, {
-                //         duration: 20000
-                //     });
+                    map.on('style.load', function () {
+                        map.rotateTo(45.0, {
+                            duration: 10000
+                        });
                   
-                // })
+                })
      
 
         })
@@ -496,12 +533,7 @@ class App extends Component {
                             )
                         }
                        
-                    </div>
-
-                  { config.legend &&  <div id="legend" className={theme} >
-        This is a Legend Box
-    </div>
-                }
+                    </div>     
                     {config.footer &&
                         <div id="footer" className={theme}>
                             <p>{config.footer}</p>
@@ -516,8 +548,11 @@ class App extends Component {
 
 
                     <Col md="8">
-
-                <div ref={el => this.mapContainer = el} className="absolute top right left bottom" />
+                    <div id="legend" className={theme} >
+        This is a Legend Box
+    </div>
+           
+                <div style={{ width: '80%' }} ref={el => this.mapContainer = el} className="absolute top right left bottom" />
                     </Col>
                 </Row>
                
