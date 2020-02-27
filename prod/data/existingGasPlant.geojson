@@ -1,9 +1,0 @@
-{
-    "type": "FeatureCollection",
-    "name": "Existing_GasPlants",
-    "features": [
-    { "type": "Feature", "properties": { "OBJECTID_1": 20, "GEODB_OID": 431, "OBJECTID": 431, "NAME": "UGHELLI EAST", "INSTALLATI": "Gas Plant", "INSTALLA_1": "", "ASSET_OWNE": "", "STATUS": "", "INSTALLA_2": "1899\/11\/30 00:00:00+00", "REMOVAL_DA": "1899\/11\/30 00:00:00+00", "SAFETY_ZON": 0, "AZIMUTH_GR": 0, "POSITION_D": "", "QC_STATUS": "", "COMMENTS": "", "SSL_CODE": "", "SURVEY_MET": "", "DEPTH_DATU": "", "ELEVATION_": 0, "ELEVATION1": 0, "WATER_DEPT": 0, "LATITUDE": 0, "LONGITUDE": 0, "GEOG_COORD": "", "GRID_COORD": "", "EASTING": 0, "NORTHING": 0, "TERRAIN": "", "AREA_LOCAT": "", "GEOM_UPDAT": "1899\/11\/30 00:00:00+00", "ATTRIBUTES": "1899\/11\/30 00:00:00+00", "URL": "", "SOURCE": "", "GEOM_UPD_1": "", "ATTRIBUT_1": "" }, "geometry": { "type": "Point", "coordinates": [ 5.937036627, 5.513586713 ] } },
-    { "type": "Feature", "properties": { "OBJECTID_1": 25, "GEODB_OID": 436, "OBJECTID": 436, "NAME": "UTOROGU", "INSTALLATI": "Gas Plant", "INSTALLA_1": "", "ASSET_OWNE": "", "STATUS": "", "INSTALLA_2": "1899\/11\/30 00:00:00+00", "REMOVAL_DA": "1899\/11\/30 00:00:00+00", "SAFETY_ZON": 0, "AZIMUTH_GR": 0, "POSITION_D": "", "QC_STATUS": "", "COMMENTS": "", "SSL_CODE": "", "SURVEY_MET": "", "DEPTH_DATU": "", "ELEVATION_": 0, "ELEVATION1": 0, "WATER_DEPT": 0, "LATITUDE": 0, "LONGITUDE": 0, "GEOG_COORD": "", "GRID_COORD": "", "EASTING": 0, "NORTHING": 0, "TERRAIN": "", "AREA_LOCAT": "", "GEOM_UPDAT": "1899\/11\/30 00:00:00+00", "ATTRIBUTES": "1899\/11\/30 00:00:00+00", "URL": "", "SOURCE": "", "GEOM_UPD_1": "", "ATTRIBUT_1": "" }, "geometry": { "type": "Point", "coordinates": [ 5.883671074, 5.43457816599999 ] } }
-    ]
-    }
-    
