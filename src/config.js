@@ -11,7 +11,19 @@ var config = {
         {
             id: 'reserve',
             title: 'Natural Gas Reserve ',
-            image: './gas.jpg',
+            chart: `<div class="pie-container">
+     
+              <div class="col-md-5" id="pieChart"></div>
+              <div id="pieText" class="col-md-7 text-container">
+                <div class="panel">
+                  <div class="content-wrapper">
+                    <h1 id="segmentTitle">Select Fragment</h1>
+                    <p id="segmentText">Detailed information about internal systems and business operations.</p>
+                  </div>
+                </div>
+              </div>
+          </div>`,
+            // image: './gas.jpg',
             description: ' According to Nigerian National Petroleum Corporation (NNPC), Nigeria has around 202 trillion cubic feet (Tcf) of proven gas reserves plus about 600 TCF unproven gas reserves. There is no data for the number of gas reserves in Delta state, so we aggregated the total number of flared gas, spread across 15 LGA\'s in Delta, totaling 528 million cube feet (Mcf). We have about 42 onshore locations where gas are been flared in Delta State.',
             location: {
                 center: [6, 5.6],

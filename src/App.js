@@ -31,6 +31,9 @@ const transformRequest = (url) => {
 }
 
 
+
+
+
 class App extends Component {
     constructor(props) {
         super(props);
@@ -527,7 +530,7 @@ class App extends Component {
 
 }
 
-function Chapter({id, theme, title, image, description, currentChapterID}) {
+function Chapter({id, theme, title, image, description, chart, currentChapterID}) {
     const classList = id === currentChapterID ? "step active" : "step";
     return (
         <Fragment>
@@ -535,6 +538,10 @@ function Chapter({id, theme, title, image, description, currentChapterID}) {
             <div className={theme}>
                 { title &&
                     <h3 className="title">{title}</h3>
+                }
+                  { chart &&
+                 <section dangerouslySetInnerHTML={{__html: chart}}></section>
+              
                 }
                 { image &&
                     <img src={image} alt={title}></img>
