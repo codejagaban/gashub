@@ -1,1 +1,471 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"/><link rel="shortcut icon" href="/favicon.ico"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="theme-color" content="#000000"/><meta name="description" content="GasHub"/><link rel="apple-touch-icon" href="logo192.png"/><link rel="manifest" href="/manifest.json"/><link rel="stylesheet" href="https://api.tiles.mapbox.com/mapbox-gl-js/v1.2.1/mapbox-gl.css"><title>GasHub</title><link href="/static/css/2.86aa6515.chunk.css" rel="stylesheet"><link href="/static/css/main.d7ef0632.chunk.css" rel="stylesheet"></head><body><noscript>You need to enable JavaScript to run this app.</noscript><div id="root"></div><script>!function(f){function e(e){for(var r,t,n=e[0],o=e[1],u=e[2],l=0,a=[];l<n.length;l++)t=n[l],Object.prototype.hasOwnProperty.call(c,t)&&c[t]&&a.push(c[t][0]),c[t]=0;for(r in o)Object.prototype.hasOwnProperty.call(o,r)&&(f[r]=o[r]);for(s&&s(e);a.length;)a.shift()();return p.push.apply(p,u||[]),i()}function i(){for(var e,r=0;r<p.length;r++){for(var t=p[r],n=!0,o=1;o<t.length;o++){var u=t[o];0!==c[u]&&(n=!1)}n&&(p.splice(r--,1),e=l(l.s=t[0]))}return e}var t={},c={1:0},p=[];function l(e){if(t[e])return t[e].exports;var r=t[e]={i:e,l:!1,exports:{}};return f[e].call(r.exports,r,r.exports,l),r.l=!0,r.exports}l.m=f,l.c=t,l.d=function(e,r,t){l.o(e,r)||Object.defineProperty(e,r,{enumerable:!0,get:t})},l.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},l.t=function(r,e){if(1&e&&(r=l(r)),8&e)return r;if(4&e&&"object"==typeof r&&r&&r.__esModule)return r;var t=Object.create(null);if(l.r(t),Object.defineProperty(t,"default",{enumerable:!0,value:r}),2&e&&"string"!=typeof r)for(var n in r)l.d(t,n,function(e){return r[e]}.bind(null,n));return t},l.n=function(e){var r=e&&e.__esModule?function(){return e.default}:function(){return e};return l.d(r,"a",r),r},l.o=function(e,r){return Object.prototype.hasOwnProperty.call(e,r)},l.p="/";var r=window["webpackJsonpreact-js"]=window["webpackJsonpreact-js"]||[],n=r.push.bind(r);r.push=e,r=r.slice();for(var o=0;o<r.length;o++)e(r[o]);var s=n;i()}([])</script><script src="/static/js/2.02479175.chunk.js"></script><script src="/static/js/main.b60e9d0b.chunk.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="GasHub"
+    />
+    <link rel="apple-touch-icon" href="logo192.png" />
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <link rel="stylesheet" href="https://api.tiles.mapbox.com/mapbox-gl-js/v1.2.1/mapbox-gl.css">
+    <title>GasHub </title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+
+  
+    <div id="root"></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+  </body>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script>
+    $(function(){
+  $("#doughnutChart").drawDoughnutChart([
+    { title: "Warri South West",         value : 119622135.7,  color: " #2669FF " },
+    { title: "Ndokwa East", value:  98430719.01,   color: "#5A7CFF" },
+    { title: "Burutu",      value:  70181277.33,   color: "#8196FF" },
+    { title: "Ndokwa West",        value : 70181277.33,   color: "#AAB2FB" },
+    { title: "Sapele",        value : 59565265.98,   color: "#B6C5FF" },
+    { title: "Warri North",   value: 44429394.2, color: "#C4CEF2"    },
+    { title: "Other 9 L.G.A s",    value: 1, color: "#264E71" },
+  ]);
+});
+;(function($, undefined) {
+  $.fn.drawDoughnutChart = function(data, options) {
+    var $this = this,
+      W = $this.width(),
+      H = $this.height(),
+      centerX = W/2,
+      centerY = H/2,
+      cos = Math.cos,
+      sin = Math.sin,
+      PI = Math.PI,
+      settings = $.extend({
+        segmentShowStroke : true,
+        segmentStrokeColor : "#0C1013",
+        segmentStrokeWidth : .1,
+        baseColor: "rgba(0,0,0,0.5)",
+        baseOffset: 0.1,
+        edgeOffset : 5,//offset from edge of $this
+        percentageInnerCutout : 75,
+        animation : true,
+        animationSteps : 90,
+        animationEasing : "easeInOutExpo",
+        animateRotate : true,
+        tipOffsetX: -8,
+        tipOffsetY: -45,
+        tipClass: "doughnutTip",
+        summaryClass: "doughnutSummary",
+        summaryTitle: "Total",
+        summaryTitleClass: "doughnutSummaryTitle",
+        summaryNumberClass: "doughnutSummaryNumber",
+        beforeDraw: function() {  },
+        afterDrawed : function() {  },
+        onPathEnter : function(e,data) {  },
+        onPathLeave : function(e,data) {  }
+      }, options),
+      animationOptions = {
+        linear : function (t) {
+          return t;
+        },
+        easeInOutExpo: function (t) {
+          var v = t<.5 ? 8*t*t*t*t : 1-8*(--t)*t*t*t;
+          return (v>1) ? 1 : v;
+        }
+      },
+      requestAnimFrame = function() {
+        return window.requestAnimationFrame ||
+          window.webkitRequestAnimationFrame ||
+          window.mozRequestAnimationFrame ||
+          window.oRequestAnimationFrame ||
+          window.msRequestAnimationFrame ||
+          function(callback) {
+            window.setTimeout(callback, 1000 / 60);
+          };
+      }();
+
+    settings.beforeDraw.call($this);
+
+    var $svg = $('<svg width="' + W + '" height="' + H + '" viewBox="0 0 ' + W + ' ' + H + '" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"></svg>').appendTo($this),
+        $paths = [],
+        easingFunction = animationOptions[settings.animationEasing],
+        doughnutRadius = Min([H / 2,W / 2]) - settings.edgeOffset,
+        cutoutRadius = doughnutRadius * (settings.percentageInnerCutout / 100),
+        segmentTotal = 0;
+
+    //Draw base doughnut
+    var baseDoughnutRadius = doughnutRadius + settings.baseOffset,
+        baseCutoutRadius = cutoutRadius - settings.baseOffset;
+    $(document.createElementNS('http://www.w3.org/2000/svg', 'path'))
+      .attr({
+        "d": getHollowCirclePath(baseDoughnutRadius, baseCutoutRadius),
+        "fill": settings.baseColor
+      })
+      .appendTo($svg);
+
+    //Set up pie segments wrapper
+    var $pathGroup = $(document.createElementNS('http://www.w3.org/2000/svg', 'g'));
+    $pathGroup.attr({opacity: 0}).appendTo($svg);
+
+    //Set up tooltip
+    var $tip = $('<div class="' + settings.tipClass + '" />').appendTo('body').hide(),
+        tipW = $tip.width(),
+        tipH = $tip.height();
+
+    //Set up center text area
+    var summarySize = (cutoutRadius - (doughnutRadius - cutoutRadius)) * 2,
+        $summary = $('<div class="' + settings.summaryClass + '" />')
+                   .appendTo($this)
+                   .css({ 
+                     width: summarySize + "px",
+                     height: summarySize + "px",
+                     "margin-left": -(summarySize / 2) + "px",
+                     "margin-top": -(summarySize / 2) + "px"
+                   });
+    var $summaryTitle = $('<p class="' + settings.summaryTitleClass + '">' + settings.summaryTitle + '</p>').appendTo($summary);
+    var $summaryNumber = $('<p class="' + settings.summaryNumberClass + '"></p>').appendTo($summary).css({opacity: 0});
+
+    for (var i = 0, len = data.length; i < len; i++) {
+      segmentTotal += data[i].value;
+      $paths[i] = $(document.createElementNS('http://www.w3.org/2000/svg', 'path'))
+        .attr({
+          "stroke-width": settings.segmentStrokeWidth,
+          "stroke": settings.segmentStrokeColor,
+          "fill": data[i].color,
+          "data-order": i
+        })
+        .appendTo($pathGroup)
+        .on("mouseenter", pathMouseEnter)
+        .on("mouseleave", pathMouseLeave)
+        .on("mousemove", pathMouseMove);
+    }
+
+    //Animation start
+    animationLoop(drawPieSegments);
+
+    //Functions
+    function getHollowCirclePath(doughnutRadius, cutoutRadius) {
+        //Calculate values for the path.
+        //We needn't calculate startRadius, segmentAngle and endRadius, because base doughnut doesn't animate.
+        var startRadius = -1.570,// -Math.PI/2
+            segmentAngle = 6.2831,// 1 * ((99.9999/100) * (PI*2)),
+            endRadius = 4.7131,// startRadius + segmentAngle
+            startX = centerX + cos(startRadius) * doughnutRadius,
+            startY = centerY + sin(startRadius) * doughnutRadius,
+            endX2 = centerX + cos(startRadius) * cutoutRadius,
+            endY2 = centerY + sin(startRadius) * cutoutRadius,
+            endX = centerX + cos(endRadius) * doughnutRadius,
+            endY = centerY + sin(endRadius) * doughnutRadius,
+            startX2 = centerX + cos(endRadius) * cutoutRadius,
+            startY2 = centerY + sin(endRadius) * cutoutRadius;
+        var cmd = [
+          'M', startX, startY,
+          'A', doughnutRadius, doughnutRadius, 0, 1, 1, endX, endY,//Draw outer circle
+          'Z',//Close path
+          'M', startX2, startY2,//Move pointer
+          'A', cutoutRadius, cutoutRadius, 0, 1, 0, endX2, endY2,//Draw inner circle
+          'Z'
+        ];
+        cmd = cmd.join(' ');
+        return cmd;
+    };
+    function pathMouseEnter(e) {
+      var order = $(this).data().order;
+      $tip.text(data[order].title + ": " + data[order].value)
+          .fadeIn(200);
+      settings.onPathEnter.apply($(this),[e,data]);
+    }
+    function pathMouseLeave(e) {
+      $tip.hide();
+      settings.onPathLeave.apply($(this),[e,data]);
+    }
+    function pathMouseMove(e) {
+      $tip.css({
+        top: e.pageY + settings.tipOffsetY,
+        left: e.pageX - $tip.width() / 2 + settings.tipOffsetX
+      });
+    }
+    function drawPieSegments (animationDecimal) {
+      var startRadius = -PI / 2,//-90 degree
+          rotateAnimation = 1;
+      if (settings.animation && settings.animateRotate) rotateAnimation = animationDecimal;//count up between0~1
+
+      drawDoughnutText(animationDecimal, segmentTotal);
+
+      $pathGroup.attr("opacity", animationDecimal);
+
+      //If data have only one value, we draw hollow circle(#1).
+      if (data.length === 1 && (4.7122 < (rotateAnimation * ((data[0].value / segmentTotal) * (PI * 2)) + startRadius))) {
+        $paths[0].attr("d", getHollowCirclePath(doughnutRadius, cutoutRadius));
+        return;
+      }
+      for (var i = 0, len = data.length; i < len; i++) {
+        var segmentAngle = rotateAnimation * ((data[i].value / segmentTotal) * (PI * 2)),
+            endRadius = startRadius + segmentAngle,
+            largeArc = ((endRadius - startRadius) % (PI * 2)) > PI ? 1 : 0,
+            startX = centerX + cos(startRadius) * doughnutRadius,
+            startY = centerY + sin(startRadius) * doughnutRadius,
+            endX2 = centerX + cos(startRadius) * cutoutRadius,
+            endY2 = centerY + sin(startRadius) * cutoutRadius,
+            endX = centerX + cos(endRadius) * doughnutRadius,
+            endY = centerY + sin(endRadius) * doughnutRadius,
+            startX2 = centerX + cos(endRadius) * cutoutRadius,
+            startY2 = centerY + sin(endRadius) * cutoutRadius;
+        var cmd = [
+          'M', startX, startY,//Move pointer
+          'A', doughnutRadius, doughnutRadius, 0, largeArc, 1, endX, endY,//Draw outer arc path
+          'L', startX2, startY2,//Draw line path(this line connects outer and innner arc paths)
+          'A', cutoutRadius, cutoutRadius, 0, largeArc, 0, endX2, endY2,//Draw inner arc path
+          'Z'//Cloth path
+        ];
+        $paths[i].attr("d", cmd.join(' '));
+        startRadius += segmentAngle;
+      }
+    }
+    function drawDoughnutText(animationDecimal, segmentTotal) {
+      $summaryNumber
+        .css({opacity: animationDecimal})
+        .text((segmentTotal * animationDecimal).toLocaleString());
+    }
+    function animateFrame(cnt, drawData) {
+      var easeAdjustedAnimationPercent =(settings.animation)? CapValue(easingFunction(cnt), null, 0) : 1;
+      drawData(easeAdjustedAnimationPercent);
+    }
+    function animationLoop(drawData) {
+      var animFrameAmount = (settings.animation)? 1 / CapValue(settings.animationSteps, Number.MAX_VALUE, 1) : 1,
+          cnt =(settings.animation)? 0 : 1;
+      requestAnimFrame(function() {
+          cnt += animFrameAmount;
+          animateFrame(cnt, drawData);
+          if (cnt <= 1) {
+            requestAnimFrame(arguments.callee);
+          } else {
+            settings.afterDrawed.call($this);
+          }
+      });
+    }
+    function Max(arr) {
+      return Math.max.apply(null, arr);
+    }
+    function Min(arr) {
+      return Math.min.apply(null, arr);
+    }
+    function isNumber(n) {
+      return !isNaN(parseFloat(n)) && isFinite(n);
+    }
+    function CapValue(valueToCap, maxValue, minValue) {
+      if (isNumber(maxValue) && valueToCap > maxValue) return maxValue;
+      if (isNumber(minValue) && valueToCap < minValue) return minValue;
+      return valueToCap;
+    }
+    return $this;
+  };
+})(jQuery);
+  </script>
+
+  <script>
+    var piesiteFired = 0;
+$(document).ready(function() {
+    var $win = $(window),
+        $win_height = $(window).height(),
+        // - A multiple of viewport height - The higher this number the sooner triggered.
+        windowPercentage = $(window).height() * 0.9;
+    $win.on("scroll", scrollReveal);
+    function scrollReveal() {
+        var scrolled = $win.scrollTop();
+        
+        ///////////////////////////////////////
+        // Bar Charts scroll activate, looking for .trigger class to fire.
+        $(".trigger").each(function() {
+            var $this = $(this),
+                offsetTop = $this.offset().top;
+            if (
+                scrolled + windowPercentage > offsetTop ||
+                $win_height > offsetTop
+            ) {
+                $(this).each(function(key, bar) {
+                    var percentage = $(this).data("percentage");
+                    $(this).css("height", 200 + "%"); 
+                    
+                    ///////////////////////////////////////
+                    //        Animated numbers
+                    $(this).prop("Counter", 0).animate(
+                        {
+                            Counter: $(this).data("percentage")
+                        },
+                        {
+                            duration: 2000,
+                            easing: "swing",
+                            step: function(now) {
+                                $(this).text(Math.ceil(now));
+                            }
+                        }
+                    );
+                    //        Animated numbers
+                    ///////////////////////////////////////
+                });
+
+            } else {
+                ///////////////////////////////////////
+                // To keep them triggered, lose this block.
+                $(this).each(function(key, bar) {
+                    $(this).css("height", 0);
+                });
+            }    
+            
+        });
+
+        ///////////////////////////////////////
+        // Horizontal Chart
+        $(".chartBarsHorizontal .bar").each(function() {
+            var $this = $(this),
+                offsetTop = $this.offset().top;
+            if (
+                scrolled + windowPercentage > offsetTop ||
+                $win_height > offsetTop
+            ) { 
+                $(this).each(function(key, bar) {
+                    var percentage = $(this).data("percentage");
+                     var score = percentage + 50
+                    $(this).css("width", score + "%");
+                    ///////////////////////////////////////
+                    //        Animated numbers
+                    $(this).prop("Counter", 0).animate(
+                        {
+                            Counter: $(this).data("percentage")
+                        },
+                        {
+                            duration: 2000,
+                            easing: "swing",
+                            step: function(now) {
+                                $(this).text(Math.ceil(now));
+                            }
+                        }
+                    );
+                    //        Animated numbers
+                    ///////////////////////////////////////
+                });
+    
+            } else {
+                ///////////////////////////////////////
+                // To keep them triggered, lose this block.
+                $(this).each(function(key, bar) {
+                    $(this).css("width", 0);
+                });
+            }    
+            
+        });
+        
+        ///////////////////////////////////////
+        // Radial Graphs - scroll activate
+        $(".piesite").each(function() {
+            var $this = $(this),
+                offsetTop = $this.offset().top;
+            if (
+                scrolled + windowPercentage > offsetTop ||
+                $win_height > offsetTop
+            ) {
+                if (piesiteFired == 0) {
+                    timerSeconds = 3;
+                    timerFinish = new Date().getTime() + timerSeconds * 1000;
+                    $(".piesite").each(function(a) {
+                        pie = $("#pie_" + a).data("pie");
+                        timer = setInterval(
+                            "stoppie(" + a + ", " + pie + ")",
+                            0
+                        );
+                    });
+                    piesiteFired = 1;
+                }
+            } else {
+                // To keep them triggered, lose this block.
+                $(".piesite").each(function() {
+                    piesiteFired = 0;
+                });
+            }
+        });
+    }
+    scrollReveal();
+});
+
+
+
+///////////////////////////////////////
+//        The Radial Graphs
+///////////////////////////////////////
+
+// The following code is originally from the excellent pen:
+// https://codepen.io/StephenScaff/pen/VYaQGB by Stephen Scaff
+
+var timer;
+var timerFinish;
+var timerSeconds;
+
+function drawTimer(c, a) {
+    $("#pie_" + c).html(
+        '<div class="percent"></div><div id="slice"' +
+            (a > 50 ? ' class="gt50"' : "") +
+            '><div class="pie"></div>' +
+            (a > 50 ? '<div class="pie fill"></div>' : "") +
+            "</div>"
+    );
+    var b = 360 / 100 * a;
+    $("#pie_" + c + " #slice .pie").css({
+        "-moz-transform": "rotate(" + b + "deg)",
+        "-webkit-transform": "rotate(" + b + "deg)",
+        "-o-transform": "rotate(" + b + "deg)",
+        transform: "rotate(" + b + "deg)"
+    });
+    a = Math.floor(a * 100) / 100;
+    arr = a.toString().split(".");
+    intPart = arr[0];
+    $("#pie_" + c + " .percent").html(
+        '<span class="int">' +
+            intPart +
+            "</span>" +
+            '<span class="symbol">%</span>'
+    );
+}
+function stoppie(d, b) {
+    var c = (timerFinish - new Date().getTime()) / 1000;
+    var a = 100 - c / timerSeconds * 100;
+    a = Math.floor(a * 100) / 100;
+    if (a <= b) {
+        drawTimer(d, a);
+    } else {
+        b = $("#pie_" + d).data("pie");
+        arr = b.toString().split(".");
+        $("#pie_" + d + " .percent .int").html(arr[0]);
+    }
+}
+
+
+  </script>
+</html>

@@ -122,7 +122,7 @@ class App extends Component {
 
                         // 3. Sea ports
 
-                map.loadImage("/boat.png", function(error, image) {
+                map.loadImage("/ship.png", function(error, image) {
                     if (error) throw error;
                     map.addImage("seaport-marker", image);
                     map.addSource('seaports', {
@@ -153,20 +153,16 @@ class App extends Component {
                         "id": "waters",
                         "type": "fill",
                         "source": "waters", 
-                       
+                        "transition": {
+                            "duration": 300,
+                            "delay": 0.2
+                          },
                         "layout": {'visibility': 'none'},
                         "paint": {
                             "fill-color": "#2244bf",
                             "fill-opacity": 1,
                         }
                     });
-
-
-
-                   
-
-
-
 
                       map.addSource('pipelines', {
                         type: 'geojson',
@@ -177,7 +173,10 @@ class App extends Component {
                         "type": "line",
                         "source": "pipelines",
                         "layout": {'visibility' : 'none'},
-                        
+                        "transition": {
+                            "duration": 500,
+                            "delay": 0.5
+                          },
                         "paint": {
                             "line-color": "#9716ce",
                             "line-opacity": 1,
@@ -285,7 +284,7 @@ class App extends Component {
 
 
 
-                    map.loadImage("/oil-rig.png", function(error, image) {
+                    map.loadImage("/gas.png", function(error, image) {
                         if (error) throw error;
                         map.addImage("bunkering-marker", image);
 
@@ -307,20 +306,20 @@ class App extends Component {
                                 });
                         });
 
-                        map.loadImage("/marker.png", function(error, image) {
+                        map.loadImage("/gas.png", function(error, image) {
                             if (error) throw error;
                             map.addImage("result-marker", image);
     
-                        map.addSource('suit', {
+                        map.addSource('result', {
                             type: 'geojson',
                             data: 'data/finally.geojson'
                           });
                           
                         
                             map.addLayer({ 
-                                id: "suit",
+                                id: "result",
                                 type: "symbol",
-                                source:'suit',
+                                source:'result',
                              
                                     layout: {
                                         "icon-image": "result-marker",
@@ -328,36 +327,6 @@ class App extends Component {
                                     }
                                     });
                             });
-
-                        map.addSource('result', {
-                            type: 'geojson',
-                            data: 'data/finally.geojson'
-                          });
-                          map.addLayer({
-                            "id": "result",
-                            "type": "circle",
-                            "source": "result",
-                            "layout": {'visibility' : 'none'},
-                            
-                            "paint": {
-                                'circle-radius': 3,
-                                // 'circle-color': '#223b53',
-                                'circle-stroke-color': {
-                                    property: 'SUITABLE',
-                                    stops: [
-                                      [2, '#31D0FF'],
-                                      [6, '#2E49AA'],
-                                      [10, '#4FEC64'],
-                                     
-                                    ]
-
-                                },
-                                'circle-stroke-width': 50,
-                                'circle-opacity': 1,
-
-                           
-                            }
-                        });
 
 
                            
