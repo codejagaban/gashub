@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react';
 import './App.css';
 import mapboxgl from 'mapbox-gl';
 import scrollama from 'scrollama';
-import { Button, ButtonToolbar, Container, Row, Col, } from 'react-bootstrap';
+import { Row, Col, } from 'react-bootstrap';
 
 const layerTypes = {
 
@@ -291,6 +291,7 @@ class App extends Component {
                     map.addSource('bunkering', {
                         type: 'geojson',
                         data: 'data/bunkering.geojson'
+
                       });
                       
                     

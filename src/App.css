@@ -185,7 +185,7 @@ a, a:hover, a:visited {
   position: absolute;
   top: 5%;
   width: 100%;
-  left: 35%;
+  left: 50%;
   margin: 0 auto;
   text-transform: uppercase;
   margin-top: -15%;
@@ -195,7 +195,7 @@ a, a:hover, a:visited {
 .doughnutSummaryNumber {
   position: absolute;
   top: 5%;
-  left: 37%;
+  left: 50%;
   width: 100%;
   margin-top: 8%;
   font-size: 33px;
