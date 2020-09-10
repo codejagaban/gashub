@@ -173,8 +173,9 @@ a, a:hover, a:visited {
 
 .doughnutSummary {
   position: absolute;
-  top: 7%;
-  left: 30%;
+  top: 6%;
+  margin: 0 !important;
+  left: 33%;
   font-size: 16px;
   color: #444;
   text-align: center;
@@ -182,10 +183,8 @@ a, a:hover, a:visited {
   cursor: default;
 }
 .doughnutSummaryTitle {
-  position: absolute;
-  top: 5%;
+ top: 5%;
   width: 100%;
-  left: 50%;
   margin: 0 auto;
   text-transform: uppercase;
   margin-top: -15%;
@@ -193,9 +192,7 @@ a, a:hover, a:visited {
   letter-spacing: .06em;
 }
 .doughnutSummaryNumber {
-  position: absolute;
   top: 5%;
-  left: 50%;
   width: 100%;
   margin-top: 8%;
   font-size: 33px;
